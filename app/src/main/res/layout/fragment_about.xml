@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="24dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btn_fa_back"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@drawable/ic_back" />
+
+        <TextView
+            android:text="@string/about"
+            style="@style/TextBar" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:contentDescription="@string/content_description"
+        android:src="@drawable/vc_about" />
+
+    <TextView
+        android:text="@string/about_description_first"
+        style="@style/TextAboutDescription" />
+
+    <TextView
+        android:text="@string/about_description_second"
+        style="@style/TextAboutDescription" />
+
+    <TextView
+        android:text="@string/about_description_third"
+        style="@style/TextAboutDescription" />
+
+    <TextView
+        style="@style/TextCopyright" />
+
+</LinearLayout>

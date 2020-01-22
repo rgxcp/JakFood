@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginEnd="56dp"
+        android:contentDescription="@string/content_description"
+        android:src="@drawable/vc_empty_user" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginEnd="64dp"
+        android:fontFamily="@font/montserrat_semi_bold"
+        android:text="@string/empty_user_heading"
+        android:textAlignment="center"
+        android:textColor="@color/blackPrimary"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginEnd="64dp"
+        android:fontFamily="@font/montserrat_regular"
+        android:lineSpacingExtra="7dp"
+        android:text="@string/empty_user_description"
+        android:textAlignment="center"
+        android:textColor="@color/blackPrimary"
+        android:textSize="14sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="48dp"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/btn_aeu_sign_in"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/bg_rounded_red"
+            android:text="@string/sign_in"
+            android:textColor="@color/whitePrimary"
+            style="@style/ButtonEmptyUser" />
+
+        <Button
+            android:id="@+id/btn_aeu_sign_up"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_outline_red"
+            android:text="@string/sign_up"
+            android:textColor="@color/redPrimary"
+            style="@style/ButtonEmptyUser" />
+    </LinearLayout>
+
+</LinearLayout>

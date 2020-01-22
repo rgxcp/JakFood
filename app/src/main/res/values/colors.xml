@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#EF5350</color>
+    <color name="colorPrimaryDark">#DCDCDC</color>
+    <color name="colorAccent">#EF5350</color>
+
+    <color name="blackPrimary">#000000</color>
+    <color name="grayPrimary">#DCDCDC</color>
+    <color name="orangePrimary">#ED8A19</color>
+    <color name="redPrimary">#EF5350</color>
+    <color name="whitePrimary">#FFFFFF</color>
+
+    <color name="graySecondary">#F5F5F5</color>
+
+    <color name="blackTransparent">#80000000</color>
+
+    <color name="ic_launcher_background">#FFFFFF</color>
+</resources>

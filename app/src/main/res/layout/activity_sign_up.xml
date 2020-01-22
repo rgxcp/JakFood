@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".SignUpActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginEnd="64dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:weightSum="4">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:contentDescription="@string/content_description"
+            android:src="@drawable/vc_logo" />
+
+        <TextView
+            android:text="@string/sign_up_welcome"
+            style="@style/TextWelcome" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/edt_asu_full_name"
+        android:layout_marginTop="32dp"
+        android:hint="@string/full_name"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        style="@style/EditTextGeneral"/>
+
+    <EditText
+        android:id="@+id/edt_asu_email"
+        android:layout_marginTop="24dp"
+        android:hint="@string/email"
+        android:importantForAutofill="no"
+        android:inputType="textEmailAddress"
+        style="@style/EditTextGeneral" />
+
+    <EditText
+        android:id="@+id/edt_asu_username"
+        android:layout_marginTop="24dp"
+        android:hint="@string/username"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        style="@style/EditTextGeneral" />
+
+    <EditText
+        android:id="@+id/edt_asu_password"
+        android:layout_marginTop="24dp"
+        android:hint="@string/password"
+        android:importantForAutofill="no"
+        android:inputType="textVisiblePassword"
+        style="@style/EditTextGeneral"/>
+
+    <Button
+        android:id="@+id/btn_asu_sign_up"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_rounded_red"
+        android:text="@string/sign_up"
+        android:textColor="@color/whitePrimary"
+        style="@style/ButtonGeneral"/>
+
+</LinearLayout>

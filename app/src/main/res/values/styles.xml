@@ -1,0 +1,133 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- Custom widget theme. -->
+    <style name="ButtonBack">
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:layout_marginTop">32dp</item>
+        <item name="android:layout_marginStart">24dp</item>
+        <item name="android:background">@drawable/ic_back</item>
+    </style>
+
+    <style name="ButtonEmptyUser">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="ButtonGeneral">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_marginStart">64dp</item>
+        <item name="android:layout_marginEnd">64dp</item>
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="EditTextGeneral">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_marginStart">64dp</item>
+        <item name="android:layout_marginEnd">64dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:background">@drawable/bg_rounded_gray</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:textColor">@color/blackPrimary</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="SearchGeneral">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_marginTop">32dp</item>
+        <item name="android:layout_marginStart">24dp</item>
+        <item name="android:layout_marginEnd">24dp</item>
+        <item name="android:background">@drawable/bg_rounded_gray</item>
+        <item name="android:imeOptions">actionDone</item>
+    </style>
+
+    <style name="SearchGeneralTheme" parent="Widget.AppCompat.SearchView">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextAboutDescription">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">24dp</item>
+        <item name="android:layout_marginStart">24dp</item>
+        <item name="android:layout_marginEnd">24dp</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:lineSpacingExtra">7dp</item>
+        <item name="android:textColor">@color/blackPrimary</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="TextBar">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:fontFamily">@font/montserrat_semi_bold</item>
+        <item name="android:textColor">@color/blackPrimary</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextCopyright">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:layout_marginStart">24dp</item>
+        <item name="android:fontFamily">@font/montserrat_extra_light</item>
+        <item name="android:text">@string/copyright</item>
+        <item name="android:textColor">@color/blackPrimary</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="TextDetailDescription">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:textColor">@color/blackPrimary</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="TextDetailHeading">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:textColor">@color/blackPrimary</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="TextProfileMenu">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="TextWelcome">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_weight">2</item>
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:lineSpacingExtra">5dp</item>
+        <item name="android:textColor">@color/redPrimary</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+</resources>

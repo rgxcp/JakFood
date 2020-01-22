@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "726663523152",
+    "firebase_url": "https://jakfood-9e884.firebaseio.com",
+    "project_id": "jakfood-9e884",
+    "storage_bucket": "jakfood-9e884.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:726663523152:android:5c33b605ef0d4f4ff6da55",
+        "android_client_info": {
+          "package_name": "com.rgxcp.jakfood"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "726663523152-p51qd7hmgp6r7q7t94qqtqq92om04v86.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rgxcp.jakfood",
+            "certificate_hash": "7bf03e5e2cf0013fcdf5021697cdd623430ae99f"
+          }
+        },
+        {
+          "client_id": "726663523152-625sici0t8kgs0f3pgviv00oi41qm1af.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdoENt3MonIkQv5HcY0zifV5MQyYqoXOs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "726663523152-625sici0t8kgs0f3pgviv00oi41qm1af.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

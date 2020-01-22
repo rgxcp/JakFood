@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FoodListActivity">
+
+    <LinearLayout
+        android:id="@+id/lnr_afl_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="24dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btn_afl_back"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@drawable/ic_back" />
+
+        <TextView
+            android:id="@+id/txt_afl_food_name"
+            style="@style/TextBar" />
+    </LinearLayout>
+
+    <SearchView
+        android:id="@+id/srv_afl_food"
+        android:layout_below="@id/lnr_afl_layout"
+        android:theme="@style/SearchGeneralTheme"
+        style="@style/SearchGeneral" />
+
+    <ProgressBar
+        android:id="@+id/pbr_afl_loading"
+        android:layout_below="@id/srv_afl_food"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="32dp"
+        android:padding="168dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcv_afl_food_list"
+        android:layout_below="@id/srv_afl_food"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp" />
+
+</RelativeLayout>
