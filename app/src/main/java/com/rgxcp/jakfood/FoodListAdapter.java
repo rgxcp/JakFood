@@ -13,7 +13,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,9 +45,10 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.ListVi
         // Deklarasi dan assign variable lokal || Menangkap data dari Getter
         Double mBintangDouble = mArrayList.get(position).getBintang();
         String mAlamatSingkat = mArrayList.get(position).getAlamat_singkat();
-        String mBintangString = mBintangDouble.toString();
         String mNamaRestoran = mArrayList.get(position).getNama_restoran();
         String mThumbnailRestoran = mArrayList.get(position).getThumbnail_restoran();
+        String mBintangString = mBintangDouble.toString();
+        RequestOptions mRequestOptions = new RequestOptions().centerCrop().placeholder(R.color.graySecondary).error(R.color.graySecondary);
 
         final String mIdRestoran = mArrayList.get(position).getId_restoran();
         final String mJenisMakanan = mArrayList.get(position).getJenis_makanan();
@@ -68,7 +70,7 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.ListVi
         holder.mTextRestaurantName.setText(mNamaRestoran);
         holder.mTextShortAddress.setText(mAlamatSingkat);
         holder.mTextStar.setText(mBintangString);
-        Picasso.get().load(mThumbnailRestoran).centerCrop().fit().into(holder.mImageRestaurantThumbnail);
+        Glide.with(mContext).load(mThumbnailRestoran).apply(mRequestOptions).into(holder.mImageRestaurantThumbnail);
 
         // Activities
         holder.itemView.setOnClickListener(new View.OnClickListener() {

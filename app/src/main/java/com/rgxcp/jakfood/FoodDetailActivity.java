@@ -16,13 +16,14 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.squareup.picasso.Picasso;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -37,6 +38,7 @@ public class FoodDetailActivity extends AppCompatActivity {
     private Double mLat, mLng;
     private ImageView mImageRestaurant, mImageFavorite, mImageMenu;
     private ProgressBar mProgressBar;
+    private RequestOptions mRequestOptions;
     private String mIdRestoranPopuler, mIdRestoranSemuaMakanan, mJenisMakananPopuler, mJenisMakananSemuaMakanan, mMenu, mRestaurantImage, mRestaurantName, mRestaurantThumbnail, mShortAddress;
     private TextView mTextRestaurantName, mTextFullAddress, mTextOpenDay, mTextOpenHour, mTextStarReview, mTextApproxPrice;
     private DatabaseReference mFirebaseAllFood, mFirebasePopuler;
@@ -65,6 +67,7 @@ public class FoodDetailActivity extends AppCompatActivity {
         mTextOpenHour = findViewById(R.id.txt_afd_open_hour);
         mTextStarReview = findViewById(R.id.txt_afd_star_review);
         mTextApproxPrice = findViewById(R.id.txt_afd_approx_price);
+        mRequestOptions = new RequestOptions().centerCrop().placeholder(R.color.graySecondary).error(R.color.graySecondary);
 
         // Deklarasi dan assign variable lokal
         Button mButtonBack = findViewById(R.id.btn_afd_back);
@@ -155,8 +158,8 @@ public class FoodDetailActivity extends AppCompatActivity {
                                 mTextOpenHour.setText(mOpenHour);
                                 mTextStarReview.setText(mStarReview);
                                 mTextApproxPrice.setText(mApproxPrice);
-                                Picasso.get().load(mRestaurantImage).centerCrop().fit().into(mImageRestaurant);
-                                Picasso.get().load(mMenu).centerCrop().fit().into(mImageMenu);
+                                Glide.with(FoodDetailActivity.this).load(mRestaurantImage).apply(mRequestOptions).into(mImageRestaurant);
+                                Glide.with(FoodDetailActivity.this).load(mMenu).apply(mRequestOptions).into(mImageMenu);
 
                                 mProgressBar.setVisibility(View.INVISIBLE);
 
@@ -276,8 +279,8 @@ public class FoodDetailActivity extends AppCompatActivity {
                         mTextOpenHour.setText(mOpenHour);
                         mTextStarReview.setText(mStarReview);
                         mTextApproxPrice.setText(mApproxPrice);
-                        Picasso.get().load(mRestaurantImage).centerCrop().fit().into(mImageRestaurant);
-                        Picasso.get().load(mMenu).centerCrop().fit().into(mImageMenu);
+                        Glide.with(FoodDetailActivity.this).load(mRestaurantImage).apply(mRequestOptions).into(mImageRestaurant);
+                        Glide.with(FoodDetailActivity.this).load(mMenu).apply(mRequestOptions).into(mImageMenu);
 
                         mProgressBar.setVisibility(View.INVISIBLE);
 

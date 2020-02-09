@@ -15,12 +15,13 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,6 +63,7 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.ListVi
         String mAlamatSingkat = mArrayList.get(position).getAlamat_singkat();
         String mNamaRestoran = mArrayList.get(position).getNama_restoran();
         String mThumbnailRestoran = mArrayList.get(position).getThumbnail_restoran();
+        RequestOptions mRequestOptions = new RequestOptions().centerCrop().placeholder(R.color.graySecondary).error(R.color.graySecondary);
 
         final String mIdRestoran = mArrayList.get(position).getId_restoran();
         final String mJenisMakanan = mArrayList.get(position).getJenis_makanan();
@@ -69,7 +71,7 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.ListVi
         // Mengisi data layout recycler view
         holder.mTextRestaurantName.setText(mNamaRestoran);
         holder.mTextShortAddress.setText(mAlamatSingkat);
-        Picasso.get().load(mThumbnailRestoran).centerCrop().fit().into(holder.mImageRestaurantThumbnail);
+        Glide.with(mContext).load(mThumbnailRestoran).apply(mRequestOptions).into(holder.mImageRestaurantThumbnail);
 
         // Activities
         holder.itemView.setOnClickListener(new View.OnClickListener() {
