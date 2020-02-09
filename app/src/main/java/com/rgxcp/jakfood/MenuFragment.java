@@ -26,12 +26,11 @@ public class MenuFragment extends Fragment {
         // Deklarasi dan assign variable lokal
         Button mButtonBack = mView.findViewById(R.id.btn_fm_back);
         PhotoView mImageMenu = mView.findViewById(R.id.img_fm_menu);
-        RequestOptions mRequestOptions = new RequestOptions().placeholder(R.color.graySecondary).error(R.color.graySecondary);
 
         // Menangkap data dari Fragment
         if (getArguments() != null) {
             String mMenu = getArguments().getString("MenuArgs");
-            Glide.with(this).load(mMenu).apply(mRequestOptions).into(mImageMenu);
+            Glide.with(this).load(mMenu).into(mImageMenu);
         }
 
         // Activities
