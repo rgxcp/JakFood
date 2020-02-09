@@ -63,7 +63,7 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.ListVi
         String mAlamatSingkat = mArrayList.get(position).getAlamat_singkat();
         String mNamaRestoran = mArrayList.get(position).getNama_restoran();
         String mThumbnailRestoran = mArrayList.get(position).getThumbnail_restoran();
-        RequestOptions mRequestOptions = new RequestOptions().centerCrop().placeholder(R.color.graySecondary).error(R.color.graySecondary);
+        RequestOptions mRequestOptions = new RequestOptions().centerCrop().placeholder(R.drawable.vc_placeholder).error(R.drawable.vc_placeholder);
 
         final String mIdRestoran = mArrayList.get(position).getId_restoran();
         final String mJenisMakanan = mArrayList.get(position).getJenis_makanan();
