@@ -11,8 +11,9 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.github.chrisbanes.photoview.PhotoView;
-import com.squareup.picasso.Picasso;
 
 public class MenuFragment extends Fragment {
 
@@ -25,11 +26,12 @@ public class MenuFragment extends Fragment {
         // Deklarasi dan assign variable lokal
         Button mButtonBack = mView.findViewById(R.id.btn_fm_back);
         PhotoView mImageMenu = mView.findViewById(R.id.img_fm_menu);
+        RequestOptions mRequestOptions = new RequestOptions().placeholder(R.color.graySecondary).error(R.color.graySecondary);
 
         // Menangkap data dari Fragment
         if (getArguments() != null) {
             String mMenu = getArguments().getString("MenuArgs");
-            Picasso.get().load(mMenu).into(mImageMenu);
+            Glide.with(this).load(mMenu).apply(mRequestOptions).into(mImageMenu);
         }
 
         // Activities
