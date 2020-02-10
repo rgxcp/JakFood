@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -88,10 +87,10 @@ public class SignUpActivity extends AppCompatActivity {
                                 mButtonSignUp.setText(mNormalState);
                             } else {
                                 // Menyimpan data ke storage Firebase
-                                dataSnapshot.getRef().child("full_name").setValue(mInputFullName.getText().toString());
-                                dataSnapshot.getRef().child("email").setValue(mInputEmail.getText().toString());
-                                dataSnapshot.getRef().child("username").setValue(mInputUsername.getText().toString());
-                                dataSnapshot.getRef().child("password").setValue(mInputPassword.getText().toString());
+                                dataSnapshot.getRef().child("full_name").setValue(mFullName);
+                                dataSnapshot.getRef().child("email").setValue(mEmail);
+                                dataSnapshot.getRef().child("username").setValue(mUsername);
+                                dataSnapshot.getRef().child("password").setValue(mPassword);
 
                                 // Menyimpan username ke storage lokal
                                 SharedPreferences mSharedPreferences = getSharedPreferences(USERNAME_KEY, MODE_PRIVATE);
