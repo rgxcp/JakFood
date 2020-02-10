@@ -21,6 +21,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Objects;
 
 public class EditProfileFragment extends Fragment {
@@ -62,7 +65,6 @@ public class EditProfileFragment extends Fragment {
                 mEditFullName.setText(Objects.requireNonNull(dataSnapshot.child("full_name").getValue()).toString());
                 mEditEmail.setText(Objects.requireNonNull(dataSnapshot.child("email").getValue()).toString());
                 mEditUsername.setHint(Objects.requireNonNull(dataSnapshot.child("username").getValue()).toString());
-                mEditPassword.setText(Objects.requireNonNull(dataSnapshot.child("password").getValue()).toString());
                 mEditUsername.setEnabled(false);
             }
 
@@ -94,14 +96,24 @@ public class EditProfileFragment extends Fragment {
                     mDatabaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                            // Menyimpan data ke storage Firebase
-                            dataSnapshot.getRef().child("full_name").setValue(mFullName);
-                            dataSnapshot.getRef().child("email").setValue(mEmail);
-                            dataSnapshot.getRef().child("password").setValue(mPassword);
+                            try {
+                                // Mengubah string menjadi SHA-256
+                                MessageDigest mMessageDigest = MessageDigest.getInstance("SHA-256");
+                                byte[] mByte = mMessageDigest.digest(mPassword.getBytes());
+                                BigInteger mBigInteger = new BigInteger(1, mByte);
+                                String mPasswordHash = mBigInteger.toString(16);
 
-                            FragmentManager mFragmentManager = getFragmentManager();
-                            if (mFragmentManager != null) {
-                                getFragmentManager().popBackStack();
+                                // Menyimpan data ke storage Firebase
+                                dataSnapshot.getRef().child("full_name").setValue(mFullName);
+                                dataSnapshot.getRef().child("email").setValue(mEmail);
+                                dataSnapshot.getRef().child("password").setValue(mPasswordHash);
+
+                                FragmentManager mFragmentManager = getFragmentManager();
+                                if (mFragmentManager != null) {
+                                    getFragmentManager().popBackStack();
+                                }
+                            } catch (NoSuchAlgorithmException e) {
+                                e.printStackTrace();
                             }
                         }
 

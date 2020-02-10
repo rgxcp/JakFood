@@ -17,6 +17,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 public class SignUpActivity extends AppCompatActivity {
 
     // Deklarasi variable global
@@ -86,21 +90,31 @@ public class SignUpActivity extends AppCompatActivity {
                                 mButtonSignUp.setEnabled(true);
                                 mButtonSignUp.setText(mNormalState);
                             } else {
-                                // Menyimpan data ke storage Firebase
-                                dataSnapshot.getRef().child("full_name").setValue(mFullName);
-                                dataSnapshot.getRef().child("email").setValue(mEmail);
-                                dataSnapshot.getRef().child("username").setValue(mUsername);
-                                dataSnapshot.getRef().child("password").setValue(mPassword);
+                                try {
+                                    // Mengubah string menjadi SHA-256
+                                    MessageDigest mMessageDigest = MessageDigest.getInstance("SHA-256");
+                                    byte[] mByte = mMessageDigest.digest(mPassword.getBytes());
+                                    BigInteger mBigInteger = new BigInteger(1, mByte);
+                                    String mPasswordMD5 = mBigInteger.toString(16);
 
-                                // Menyimpan username ke storage lokal
-                                SharedPreferences mSharedPreferences = getSharedPreferences(USERNAME_KEY, MODE_PRIVATE);
-                                SharedPreferences.Editor mEditor = mSharedPreferences.edit();
-                                mEditor.putString(UsernameKeyArgs, mUsername);
-                                mEditor.apply();
+                                    // Menyimpan data ke storage Firebase
+                                    dataSnapshot.getRef().child("full_name").setValue(mFullName);
+                                    dataSnapshot.getRef().child("email").setValue(mEmail);
+                                    dataSnapshot.getRef().child("username").setValue(mUsername);
+                                    dataSnapshot.getRef().child("password").setValue(mPasswordMD5);
 
-                                Intent mGotoSignUpSuccess = new Intent(SignUpActivity.this, SignUpSuccessActivity.class);
-                                startActivity(mGotoSignUpSuccess);
-                                finishAffinity();
+                                    // Menyimpan username ke storage lokal
+                                    SharedPreferences mSharedPreferences = getSharedPreferences(USERNAME_KEY, MODE_PRIVATE);
+                                    SharedPreferences.Editor mEditor = mSharedPreferences.edit();
+                                    mEditor.putString(UsernameKeyArgs, mUsername);
+                                    mEditor.apply();
+
+                                    Intent mGotoSignUpSuccess = new Intent(SignUpActivity.this, SignUpSuccessActivity.class);
+                                    startActivity(mGotoSignUpSuccess);
+                                    finishAffinity();
+                                } catch (NoSuchAlgorithmException e) {
+                                    e.printStackTrace();
+                                }
                             }
                         }
 

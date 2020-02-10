@@ -17,6 +17,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Objects;
 
 public class SignInActivity extends AppCompatActivity {
@@ -73,21 +76,31 @@ public class SignInActivity extends AppCompatActivity {
                             // Validasi apakah username terdaftar
                             if (dataSnapshot.exists()) {
                                 mPasswordFirebase = Objects.requireNonNull(dataSnapshot.child("password").getValue()).toString();
-                                // Validasi apakah password benar
-                                if (mPassword.equals(mPasswordFirebase)) {
-                                    // Menyimpan username ke storage lokal
-                                    SharedPreferences mSharedPreferences = getSharedPreferences(USERNAME_KEY, MODE_PRIVATE);
-                                    SharedPreferences.Editor mEditor = mSharedPreferences.edit();
-                                    mEditor.putString(UsernameKeyArgs, mUsername);
-                                    mEditor.apply();
+                                try {
+                                    // Mengubah string menjadi SHA-256
+                                    MessageDigest mMessageDigest = MessageDigest.getInstance("SHA-256");
+                                    byte[] mByte = mMessageDigest.digest(mPassword.getBytes());
+                                    BigInteger mBigInteger = new BigInteger(1, mByte);
+                                    String mPasswordHash = mBigInteger.toString(16);
 
-                                    Intent mGotoMain = new Intent(SignInActivity.this, MainActivity.class);
-                                    startActivity(mGotoMain);
-                                    finishAffinity();
-                                } else {
-                                    Toast.makeText(getApplicationContext(), "Kata sandi salah.", Toast.LENGTH_SHORT).show();
-                                    mButtonSignIn.setEnabled(true);
-                                    mButtonSignIn.setText(mNormalState);
+                                    // Validasi apakah password benar
+                                    if (mPasswordHash.equals(mPasswordFirebase)) {
+                                        // Menyimpan username ke storage lokal
+                                        SharedPreferences mSharedPreferences = getSharedPreferences(USERNAME_KEY, MODE_PRIVATE);
+                                        SharedPreferences.Editor mEditor = mSharedPreferences.edit();
+                                        mEditor.putString(UsernameKeyArgs, mUsername);
+                                        mEditor.apply();
+
+                                        Intent mGotoMain = new Intent(SignInActivity.this, MainActivity.class);
+                                        startActivity(mGotoMain);
+                                        finishAffinity();
+                                    } else {
+                                        Toast.makeText(getApplicationContext(), "Kata sandi salah.", Toast.LENGTH_SHORT).show();
+                                        mButtonSignIn.setEnabled(true);
+                                        mButtonSignIn.setText(mNormalState);
+                                    }
+                                } catch (NoSuchAlgorithmException e) {
+                                    e.printStackTrace();
                                 }
                             } else {
                                 Toast.makeText(getApplicationContext(), "Username tidak terdaftar.", Toast.LENGTH_SHORT).show();
