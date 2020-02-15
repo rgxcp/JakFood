@@ -47,4 +47,16 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp" />
 
+    <TextView
+        android:id="@+id/txt_load_more"
+        android:layout_below="@id/rcv_afl_food_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/montserrat_regular"
+        android:text="@string/load_more"
+        android:textSize="14sp" />
+
 </RelativeLayout>
