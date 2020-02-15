@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -44,6 +45,7 @@ public class FoodListActivity extends AppCompatActivity {
         Button mButtonBack = findViewById(R.id.btn_afl_back);
         SearchView mSearchView = findViewById(R.id.srv_afl_food);
         TextView mTextFoodName = findViewById(R.id.txt_afl_food_name);
+        TextView mTextLoadMore = findViewById(R.id.txt_load_more);
         DatabaseReference mDatabaseReference;
 
         // Recycler view
@@ -58,6 +60,7 @@ public class FoodListActivity extends AppCompatActivity {
         Bundle mBundle = getIntent().getExtras();
         String mJenisMakanan = Objects.requireNonNull(mBundle).getString("JenisMakananArgs");
         String mNamaMakanan = Objects.requireNonNull(mBundle).getString("NamaMakananArgs");
+        final String mURL = mBundle.getString("URLArgs");
 
         // Setup hint search view
         mTextFoodName.setText(mNamaMakanan);
@@ -95,6 +98,15 @@ public class FoodListActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 onBackPressed();
+            }
+        });
+
+        mTextLoadMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent mGotoZomatoFoodList = new Intent(FoodListActivity.this, ZomatoFoodListActivity.class);
+                mGotoZomatoFoodList.putExtra("URLArgs", mURL);
+                startActivity(mGotoZomatoFoodList);
             }
         });
 
