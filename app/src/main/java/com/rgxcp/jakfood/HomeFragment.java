@@ -71,6 +71,7 @@ public class HomeFragment extends Fragment {
                 Intent mGotoFoodList = new Intent(getActivity(), FoodListActivity.class);
                 mGotoFoodList.putExtra("JenisMakananArgs", "ayam_bakar");
                 mGotoFoodList.putExtra("NamaMakananArgs", "Ayam Bakar");
+                mGotoFoodList.putExtra("URLArgs", "https://developers.zomato.com/api/v2.1/search?entity_id=74&entity_type=city&q=ayam%20bakar&sort=rating&order=desc");
                 startActivity(mGotoFoodList);
             }
         });
