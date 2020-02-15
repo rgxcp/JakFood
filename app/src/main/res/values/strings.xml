@@ -25,6 +25,9 @@
     <string name="sign_out">Keluar</string>
     <string name="total_favorite">0 Makanan Favorit</string>
 
+    // Food List
+    <string name="load_more">Lihat lebih banyak restoran?</string>
+
     // Food Detail
     <string name="detail">Detail</string>
     <string name="menu">Menu</string>
