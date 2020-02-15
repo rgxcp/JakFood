@@ -2,27 +2,26 @@ package com.rgxcp.jakfood;
 
 public class ZomatoFoodList {
 
-    private Integer id;
-    private String aggregate_rating, name, locality_verbose, thumb;
+    private String aggregate_rating, id, name, locality_verbose, thumb;
 
     public ZomatoFoodList() {
         //
     }
 
-    public ZomatoFoodList(Integer id, String aggregate_rating, String name, String locality_verbose, String thumb) {
-        this.id = id;
+    public ZomatoFoodList(String aggregate_rating, String id, String name, String locality_verbose, String thumb) {
         this.aggregate_rating = aggregate_rating;
+        this.id = id;
         this.name = name;
         this.locality_verbose = locality_verbose;
         this.thumb = thumb;
     }
 
-    public Integer getId() {
-        return id;
-    }
-
     public String getAggregate_rating() {
         return aggregate_rating;
+    }
+
+    public String getId() {
+        return id;
     }
 
     public String getName() {
@@ -37,12 +36,12 @@ public class ZomatoFoodList {
         return thumb;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
     public void setAggregate_rating(String aggregate_rating) {
         this.aggregate_rating = aggregate_rating;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public void setName(String name) {
