@@ -58,8 +58,9 @@
                         android:id="@+id/img_afd_restaurant_image"
                         android:layout_width="match_parent"
                         android:layout_height="270dp"
+                        android:background="@color/graySecondary"
                         android:contentDescription="@string/content_description"
-                        android:src="@color/colorPrimaryDark" />
+                        android:src="@drawable/vc_placeholder" />
                 </com.github.florent37.shapeofview.shapes.RoundRectView>
             </RelativeLayout>
 
@@ -178,7 +179,7 @@
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:contentDescription="@string/content_description"
-                        android:src="@color/colorPrimaryDark" />
+                        android:src="@drawable/vc_placeholder" />
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
         </LinearLayout>
