@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    // Google Maps
     <string name="maps_key" translatable="false">AIzaSyAdoENt3MonIkQv5HcY0zifV5MQyYqoXOs</string>
+
+    // Zomato
+    <string name="zomato_key" translatable="false">8e3d4ea024e62117b2b83e67e4d66b5b</string>
 
 </resources>
