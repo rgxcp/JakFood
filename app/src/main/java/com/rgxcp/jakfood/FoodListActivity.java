@@ -43,9 +43,9 @@ public class FoodListActivity extends AppCompatActivity {
 
         // Deklarasi dan assign variable lokal
         Button mButtonBack = findViewById(R.id.btn_afl_back);
+        Button mButtonLoadMore = findViewById(R.id.btn_load_more);
         SearchView mSearchView = findViewById(R.id.srv_afl_food);
         TextView mTextFoodName = findViewById(R.id.txt_afl_food_name);
-        TextView mTextLoadMore = findViewById(R.id.txt_load_more);
         DatabaseReference mDatabaseReference;
 
         // Recycler view
@@ -101,7 +101,7 @@ public class FoodListActivity extends AppCompatActivity {
             }
         });
 
-        mTextLoadMore.setOnClickListener(new View.OnClickListener() {
+        mButtonLoadMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent mGotoZomatoFoodList = new Intent(FoodListActivity.this, ZomatoFoodListActivity.class);
