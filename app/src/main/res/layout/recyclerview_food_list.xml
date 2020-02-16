@@ -36,16 +36,16 @@
 
         <TextView
             android:id="@+id/txt_rfl_restaurant_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
             android:fontFamily="@font/montserrat_medium"
             android:textColor="@color/blackPrimary"
             android:textSize="14sp" />
 
         <TextView
             android:id="@+id/txt_rfl_short_address"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="18dp"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/montserrat_regular"
             android:textSize="13sp" />
