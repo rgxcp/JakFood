@@ -27,6 +27,8 @@ public class FoodListActivity extends AppCompatActivity {
 
     // Deklarasi variable global
     private ProgressBar mProgressBar;
+    private String mRequestURL;
+    private TextView mTextLoadMore;
 
     // Setup recycler view
     private ArrayList<FoodList> mArrayList;
@@ -40,10 +42,10 @@ public class FoodListActivity extends AppCompatActivity {
 
         // Assign variable global
         mProgressBar = findViewById(R.id.pbr_afl_loading);
+        mTextLoadMore = findViewById(R.id.txt_afl_load_more);
 
         // Deklarasi dan assign variable lokal
         Button mButtonBack = findViewById(R.id.btn_afl_back);
-        Button mButtonLoadMore = findViewById(R.id.btn_load_more);
         SearchView mSearchView = findViewById(R.id.srv_afl_food);
         TextView mTextFoodName = findViewById(R.id.txt_afl_food_name);
         DatabaseReference mDatabaseReference;
@@ -60,7 +62,7 @@ public class FoodListActivity extends AppCompatActivity {
         Bundle mBundle = getIntent().getExtras();
         String mJenisMakanan = Objects.requireNonNull(mBundle).getString("JenisMakananArgs");
         String mNamaMakanan = Objects.requireNonNull(mBundle).getString("NamaMakananArgs");
-        final String mURL = mBundle.getString("URLArgs");
+        mRequestURL = mBundle.getString("RequestURLArgs");
 
         // Setup hint search view
         mTextFoodName.setText(mNamaMakanan);
@@ -84,6 +86,7 @@ public class FoodListActivity extends AppCompatActivity {
                     mFoodListAdapter = new FoodListAdapter(FoodListActivity.this, mArrayList);
                     mRecyclerView.setAdapter(mFoodListAdapter);
                     mProgressBar.setVisibility(View.INVISIBLE);
+                    mTextLoadMore.setVisibility(View.VISIBLE);
                 }
 
                 @Override
@@ -101,11 +104,11 @@ public class FoodListActivity extends AppCompatActivity {
             }
         });
 
-        mButtonLoadMore.setOnClickListener(new View.OnClickListener() {
+        mTextLoadMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent mGotoZomatoFoodList = new Intent(FoodListActivity.this, ZomatoFoodListActivity.class);
-                mGotoZomatoFoodList.putExtra("URLArgs", mURL);
+                mGotoZomatoFoodList.putExtra("RequestURLArgs", mRequestURL);
                 startActivity(mGotoZomatoFoodList);
             }
         });
