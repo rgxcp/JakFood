@@ -71,7 +71,7 @@ public class HomeFragment extends Fragment {
                 Intent mGotoFoodList = new Intent(getActivity(), FoodListActivity.class);
                 mGotoFoodList.putExtra("JenisMakananArgs", "ayam_bakar");
                 mGotoFoodList.putExtra("NamaMakananArgs", "Ayam Bakar");
-                mGotoFoodList.putExtra("URLArgs", "https://developers.zomato.com/api/v2.1/search?entity_id=74&entity_type=city&q=ayam%20bakar&sort=rating&order=desc");
+                mGotoFoodList.putExtra("RequestURLArgs", "https://developers.zomato.com/api/v2.1/search?entity_id=74&entity_type=city&q=ayam%20bakar");
                 startActivity(mGotoFoodList);
             }
         });
@@ -82,6 +82,7 @@ public class HomeFragment extends Fragment {
                 Intent mGotoFoodList = new Intent(getActivity(), FoodListActivity.class);
                 mGotoFoodList.putExtra("JenisMakananArgs", "bakso");
                 mGotoFoodList.putExtra("NamaMakananArgs", "Bakso");
+                mGotoFoodList.putExtra("RequestURLArgs", "https://developers.zomato.com/api/v2.1/search?entity_id=74&entity_type=city&q=bakso");
                 startActivity(mGotoFoodList);
             }
         });
@@ -92,6 +93,7 @@ public class HomeFragment extends Fragment {
                 Intent mGotoFoodList = new Intent(getActivity(), FoodListActivity.class);
                 mGotoFoodList.putExtra("JenisMakananArgs", "bubur_ayam");
                 mGotoFoodList.putExtra("NamaMakananArgs", "Bubur Ayam");
+                mGotoFoodList.putExtra("RequestURLArgs", "https://developers.zomato.com/api/v2.1/search?entity_id=74&entity_type=city&q=bubur%20ayam");
                 startActivity(mGotoFoodList);
             }
         });
@@ -102,6 +104,7 @@ public class HomeFragment extends Fragment {
                 Intent mGotoFoodList = new Intent(getActivity(), FoodListActivity.class);
                 mGotoFoodList.putExtra("JenisMakananArgs", "gado_gado");
                 mGotoFoodList.putExtra("NamaMakananArgs", "Gado-Gado");
+                mGotoFoodList.putExtra("RequestURLArgs", "https://developers.zomato.com/api/v2.1/search?entity_id=74&entity_type=city&q=gado%20gado");
                 startActivity(mGotoFoodList);
             }
         });
@@ -112,6 +115,7 @@ public class HomeFragment extends Fragment {
                 Intent mGotoFoodList = new Intent(getActivity(), FoodListActivity.class);
                 mGotoFoodList.putExtra("JenisMakananArgs", "kepiting");
                 mGotoFoodList.putExtra("NamaMakananArgs", "Kepiting");
+                mGotoFoodList.putExtra("RequestURLArgs", "https://developers.zomato.com/api/v2.1/search?entity_id=74&entity_type=city&q=kepiting");
                 startActivity(mGotoFoodList);
             }
         });
@@ -122,6 +126,7 @@ public class HomeFragment extends Fragment {
                 Intent mGotoFoodList = new Intent(getActivity(), FoodListActivity.class);
                 mGotoFoodList.putExtra("JenisMakananArgs", "martabak");
                 mGotoFoodList.putExtra("NamaMakananArgs", "Martabak");
+                mGotoFoodList.putExtra("RequestURLArgs", "https://developers.zomato.com/api/v2.1/search?entity_id=74&entity_type=city&q=martabak");
                 startActivity(mGotoFoodList);
             }
         });
@@ -132,6 +137,7 @@ public class HomeFragment extends Fragment {
                 Intent mGotoFoodList = new Intent(getActivity(), FoodListActivity.class);
                 mGotoFoodList.putExtra("JenisMakananArgs", "mie_ayam");
                 mGotoFoodList.putExtra("NamaMakananArgs", "Mie Ayam");
+                mGotoFoodList.putExtra("RequestURLArgs", "https://developers.zomato.com/api/v2.1/search?entity_id=74&entity_type=city&q=mie%20ayam");
                 startActivity(mGotoFoodList);
             }
         });
@@ -142,6 +148,7 @@ public class HomeFragment extends Fragment {
                 Intent mGotoFoodList = new Intent(getActivity(), FoodListActivity.class);
                 mGotoFoodList.putExtra("JenisMakananArgs", "nasi_goreng");
                 mGotoFoodList.putExtra("NamaMakananArgs", "Nasi Goreng");
+                mGotoFoodList.putExtra("RequestURLArgs", "https://developers.zomato.com/api/v2.1/search?entity_id=74&entity_type=city&q=nasi%20goreng");
                 startActivity(mGotoFoodList);
             }
         });
@@ -152,6 +159,7 @@ public class HomeFragment extends Fragment {
                 Intent mGotoFoodList = new Intent(getActivity(), FoodListActivity.class);
                 mGotoFoodList.putExtra("JenisMakananArgs", "nasi_uduk");
                 mGotoFoodList.putExtra("NamaMakananArgs", "Nasi Uduk");
+                mGotoFoodList.putExtra("RequestURLArgs", "https://developers.zomato.com/api/v2.1/search?entity_id=74&entity_type=city&q=nasi%20uduk");
                 startActivity(mGotoFoodList);
             }
         });
@@ -162,6 +170,7 @@ public class HomeFragment extends Fragment {
                 Intent mGotoFoodList = new Intent(getActivity(), FoodListActivity.class);
                 mGotoFoodList.putExtra("JenisMakananArgs", "roti_bakar");
                 mGotoFoodList.putExtra("NamaMakananArgs", "Roti Bakar");
+                mGotoFoodList.putExtra("RequestURLArgs", "https://developers.zomato.com/api/v2.1/search?entity_id=74&entity_type=city&q=roti%20bakar");
                 startActivity(mGotoFoodList);
             }
         });
@@ -172,6 +181,7 @@ public class HomeFragment extends Fragment {
                 Intent mGotoFoodList = new Intent(getActivity(), FoodListActivity.class);
                 mGotoFoodList.putExtra("JenisMakananArgs", "sate");
                 mGotoFoodList.putExtra("NamaMakananArgs", "Sate");
+                mGotoFoodList.putExtra("RequestURLArgs", "https://developers.zomato.com/api/v2.1/search?entity_id=74&entity_type=city&q=sate");
                 startActivity(mGotoFoodList);
             }
         });
@@ -182,6 +192,7 @@ public class HomeFragment extends Fragment {
                 Intent mGotoFoodList = new Intent(getActivity(), FoodListActivity.class);
                 mGotoFoodList.putExtra("JenisMakananArgs", "soto_betawi");
                 mGotoFoodList.putExtra("NamaMakananArgs", "Soto Betawi");
+                mGotoFoodList.putExtra("RequestURLArgs", "https://developers.zomato.com/api/v2.1/search?entity_id=74&entity_type=city&q=soto%20betawi");
                 startActivity(mGotoFoodList);
             }
         });
