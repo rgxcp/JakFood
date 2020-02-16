@@ -27,9 +27,9 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.ListVi
     private List<FoodList> mList;
 
     // Constructor
-    FoodListAdapter(Context context, ArrayList<FoodList> arrayList) {
-        mContext = context;
-        mArrayList = arrayList;
+    FoodListAdapter(Context mContext, ArrayList<FoodList> mArrayList) {
+        this.mContext = mContext;
+        this.mArrayList = mArrayList;
         mList = new ArrayList<>(mArrayList);
     }
 

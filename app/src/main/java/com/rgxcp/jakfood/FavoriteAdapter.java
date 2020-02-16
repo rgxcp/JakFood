@@ -41,9 +41,9 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.ListVi
     private String mUsername;
 
     // Constructor
-    FavoriteAdapter(Context context, ArrayList<FoodList> arrayList) {
-        mContext = context;
-        mArrayList = arrayList;
+    FavoriteAdapter(Context mContext, ArrayList<FoodList> mArrayList) {
+        this.mContext = mContext;
+        this.mArrayList = mArrayList;
         mList = new ArrayList<>(mArrayList);
     }
 
