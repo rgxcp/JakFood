@@ -4,7 +4,7 @@ public class ZomatoFoodList {
 
     private String aggregate_rating, id, name, locality_verbose, thumb;
 
-    public ZomatoFoodList() {
+    ZomatoFoodList() {
         //
     }
 
@@ -16,43 +16,43 @@ public class ZomatoFoodList {
         this.thumb = thumb;
     }
 
-    public String getAggregate_rating() {
+    String getAggregate_rating() {
         return aggregate_rating;
     }
 
-    public String getId() {
+    String getId() {
         return id;
     }
 
-    public String getName() {
+    String getName() {
         return name;
     }
 
-    public String getLocality_verbose() {
+    String getLocality_verbose() {
         return locality_verbose;
     }
 
-    public String getThumb() {
+    String getThumb() {
         return thumb;
     }
 
-    public void setAggregate_rating(String aggregate_rating) {
+    void setAggregate_rating(String aggregate_rating) {
         this.aggregate_rating = aggregate_rating;
     }
 
-    public void setId(String id) {
+    void setId(String id) {
         this.id = id;
     }
 
-    public void setName(String name) {
+    void setName(String name) {
         this.name = name;
     }
 
-    public void setLocality_verbose(String locality_verbose) {
+    void setLocality_verbose(String locality_verbose) {
         this.locality_verbose = locality_verbose;
     }
 
-    public void setThumb(String thumb) {
+    void setThumb(String thumb) {
         this.thumb = thumb;
     }
 }
