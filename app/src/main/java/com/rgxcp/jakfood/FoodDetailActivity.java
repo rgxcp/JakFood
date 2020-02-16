@@ -38,7 +38,7 @@ public class FoodDetailActivity extends AppCompatActivity {
     private Double mLat, mLng;
     private ImageView mImageRestaurant, mImageFavorite, mImageMenu;
     private ProgressBar mProgressBar;
-    private RequestOptions mRequestOptionsMenu, mRequestOptionsRestaurant;
+    private RequestOptions mRequestOptions;
     private String mIdRestoranPopuler, mIdRestoranSemuaMakanan, mJenisMakananPopuler, mJenisMakananSemuaMakanan, mMenu, mRestaurantImage, mRestaurantName, mRestaurantThumbnail, mShortAddress;
     private TextView mTextRestaurantName, mTextFullAddress, mTextOpenDay, mTextOpenHour, mTextStarReview, mTextApproxPrice;
     private DatabaseReference mFirebaseAllFood, mFirebasePopuler;
@@ -67,8 +67,7 @@ public class FoodDetailActivity extends AppCompatActivity {
         mTextOpenHour = findViewById(R.id.txt_afd_open_hour);
         mTextStarReview = findViewById(R.id.txt_afd_star_review);
         mTextApproxPrice = findViewById(R.id.txt_afd_approx_price);
-        mRequestOptionsMenu = new RequestOptions().centerCrop().placeholder(R.drawable.vc_placeholder).error(R.drawable.vc_placeholder);
-        mRequestOptionsRestaurant = new RequestOptions().centerCrop().placeholder(R.color.graySecondary).error(R.color.graySecondary);
+        mRequestOptions = new RequestOptions().centerCrop().placeholder(R.drawable.vc_placeholder).error(R.drawable.vc_placeholder);
 
         // Deklarasi dan assign variable lokal
         Button mButtonBack = findViewById(R.id.btn_afd_back);
@@ -159,8 +158,8 @@ public class FoodDetailActivity extends AppCompatActivity {
                                 mTextOpenHour.setText(mOpenHour);
                                 mTextStarReview.setText(mStarReview);
                                 mTextApproxPrice.setText(mApproxPrice);
-                                Glide.with(FoodDetailActivity.this).load(mRestaurantImage).apply(mRequestOptionsRestaurant).into(mImageRestaurant);
-                                Glide.with(FoodDetailActivity.this).load(mMenu).apply(mRequestOptionsMenu).into(mImageMenu);
+                                Glide.with(FoodDetailActivity.this).load(mRestaurantImage).apply(mRequestOptions).into(mImageRestaurant);
+                                Glide.with(FoodDetailActivity.this).load(mMenu).apply(mRequestOptions).into(mImageMenu);
 
                                 mProgressBar.setVisibility(View.INVISIBLE);
 
@@ -280,8 +279,8 @@ public class FoodDetailActivity extends AppCompatActivity {
                         mTextOpenHour.setText(mOpenHour);
                         mTextStarReview.setText(mStarReview);
                         mTextApproxPrice.setText(mApproxPrice);
-                        Glide.with(FoodDetailActivity.this).load(mRestaurantImage).apply(mRequestOptionsRestaurant).into(mImageRestaurant);
-                        Glide.with(FoodDetailActivity.this).load(mMenu).apply(mRequestOptionsMenu).into(mImageMenu);
+                        Glide.with(FoodDetailActivity.this).load(mRestaurantImage).apply(mRequestOptions).into(mImageRestaurant);
+                        Glide.with(FoodDetailActivity.this).load(mMenu).apply(mRequestOptions).into(mImageMenu);
 
                         mProgressBar.setVisibility(View.INVISIBLE);
 
