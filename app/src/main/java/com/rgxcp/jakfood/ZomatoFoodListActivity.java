@@ -104,7 +104,7 @@ public class ZomatoFoodListActivity extends AppCompatActivity {
                         JSONObject mLocationObject = mRestaurantObject.getJSONObject("location");
                         JSONObject mUserRatingObject = mRestaurantObject.getJSONObject("user_rating");
 
-                        // Memasukkan data ke model dengan Setter
+                        // Mengirim data ke Setter
                         ZomatoFoodList mZomatoFoodList = new ZomatoFoodList();
                         mZomatoFoodList.setAggregate_rating(mUserRatingObject.getString("aggregate_rating"));
                         mZomatoFoodList.setId(mRestaurantObject.getString("id"));
