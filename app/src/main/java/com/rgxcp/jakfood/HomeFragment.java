@@ -268,7 +268,7 @@ public class HomeFragment extends Fragment {
         mImageNightlife.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent mGotoZomatoFoodList = new Intent(getActivity(), ZomatoFoodList.class);
+                Intent mGotoZomatoFoodList = new Intent(getActivity(), ZomatoFoodListActivity.class);
                 mGotoZomatoFoodList.putExtra("CategoryArgs", "Nightlife");
                 mGotoZomatoFoodList.putExtra("RequestURLArgs", "https://developers.zomato.com/api/v2.1/search?entity_id=74&entity_type=city&category=3");
                 startActivity(mGotoZomatoFoodList);
