@@ -199,6 +199,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent mGotoZomatoFoodList = new Intent(getActivity(), ZomatoFoodListActivity.class);
+                mGotoZomatoFoodList.putExtra("CategoryArgs", "Breakfast");
                 mGotoZomatoFoodList.putExtra("RequestURLArgs", "https://developers.zomato.com/api/v2.1/search?entity_id=74&entity_type=city&category=8");
                 startActivity(mGotoZomatoFoodList);
             }
@@ -208,6 +209,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent mGotoZomatoFoodList = new Intent(getActivity(), ZomatoFoodListActivity.class);
+                mGotoZomatoFoodList.putExtra("CategoryArgs", "Lunch");
                 mGotoZomatoFoodList.putExtra("RequestURLArgs", "https://developers.zomato.com/api/v2.1/search?entity_id=74&entity_type=city&category=9");
                 startActivity(mGotoZomatoFoodList);
             }
@@ -217,6 +219,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent mGotoZomatoFoodList = new Intent(getActivity(), ZomatoFoodListActivity.class);
+                mGotoZomatoFoodList.putExtra("CategoryArgs", "Dinner");
                 mGotoZomatoFoodList.putExtra("RequestURLArgs", "https://developers.zomato.com/api/v2.1/search?entity_id=74&entity_type=city&category=10");
                 startActivity(mGotoZomatoFoodList);
             }
@@ -226,6 +229,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent mGotoZomatoFoodList = new Intent(getActivity(), ZomatoFoodListActivity.class);
+                mGotoZomatoFoodList.putExtra("CategoryArgs", "Bar & Pub");
                 mGotoZomatoFoodList.putExtra("RequestURLArgs", "https://developers.zomato.com/api/v2.1/search?entity_id=74&entity_type=city&category=11");
                 startActivity(mGotoZomatoFoodList);
             }
@@ -235,6 +239,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent mGotoZomatoFoodList = new Intent(getActivity(), ZomatoFoodListActivity.class);
+                mGotoZomatoFoodList.putExtra("CategoryArgs", "Delivery");
                 mGotoZomatoFoodList.putExtra("RequestURLArgs", "https://developers.zomato.com/api/v2.1/search?entity_id=74&entity_type=city&category=13");
                 startActivity(mGotoZomatoFoodList);
             }
@@ -244,6 +249,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent mGotoZomatoFoodList = new Intent(getActivity(), ZomatoFoodListActivity.class);
+                mGotoZomatoFoodList.putExtra("CategoryArgs", "Kafe");
                 mGotoZomatoFoodList.putExtra("RequestURLArgs", "https://developers.zomato.com/api/v2.1/search?entity_id=74&entity_type=city&category=6");
                 startActivity(mGotoZomatoFoodList);
             }
@@ -253,6 +259,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent mGotoZomatoFoodList = new Intent(getActivity(), ZomatoFoodListActivity.class);
+                mGotoZomatoFoodList.putExtra("CategoryArgs", "Klub & Longue");
                 mGotoZomatoFoodList.putExtra("RequestURLArgs", "https://developers.zomato.com/api/v2.1/search?entity_id=74&entity_type=city&category=14");
                 startActivity(mGotoZomatoFoodList);
             }
@@ -262,6 +269,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent mGotoZomatoFoodList = new Intent(getActivity(), ZomatoFoodList.class);
+                mGotoZomatoFoodList.putExtra("CategoryArgs", "Nightlife");
                 mGotoZomatoFoodList.putExtra("RequestURLArgs", "https://developers.zomato.com/api/v2.1/search?entity_id=74&entity_type=city&category=3");
                 startActivity(mGotoZomatoFoodList);
             }
@@ -271,6 +279,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent mGotoZomatoFoodList = new Intent(getActivity(), ZomatoFoodListActivity.class);
+                mGotoZomatoFoodList.putExtra("CategoryArgs", "Takeaway");
                 mGotoZomatoFoodList.putExtra("RequestURLArgs", "https://developers.zomato.com/api/v2.1/search?entity_id=74&entity_type=city&category=5");
                 startActivity(mGotoZomatoFoodList);
             }
