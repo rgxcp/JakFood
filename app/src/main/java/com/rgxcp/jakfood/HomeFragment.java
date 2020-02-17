@@ -198,7 +198,7 @@ public class HomeFragment extends Fragment {
         mImageMakanPagi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent mGotoZomatoFoodList = new Intent(getActivity(), ZomatoFoodList.class);
+                Intent mGotoZomatoFoodList = new Intent(getActivity(), ZomatoFoodListActivity.class);
                 mGotoZomatoFoodList.putExtra("RequestURLArgs", "https://developers.zomato.com/api/v2.1/search?entity_id=74&entity_type=city&category=8");
                 startActivity(mGotoZomatoFoodList);
             }
@@ -207,7 +207,7 @@ public class HomeFragment extends Fragment {
         mImageMakanSiang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent mGotoZomatoFoodList = new Intent(getActivity(), ZomatoFoodList.class);
+                Intent mGotoZomatoFoodList = new Intent(getActivity(), ZomatoFoodListActivity.class);
                 mGotoZomatoFoodList.putExtra("RequestURLArgs", "https://developers.zomato.com/api/v2.1/search?entity_id=74&entity_type=city&category=9");
                 startActivity(mGotoZomatoFoodList);
             }
@@ -216,7 +216,7 @@ public class HomeFragment extends Fragment {
         mImageMakanMalam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent mGotoZomatoFoodList = new Intent(getActivity(), ZomatoFoodList.class);
+                Intent mGotoZomatoFoodList = new Intent(getActivity(), ZomatoFoodListActivity.class);
                 mGotoZomatoFoodList.putExtra("RequestURLArgs", "https://developers.zomato.com/api/v2.1/search?entity_id=74&entity_type=city&category=10");
                 startActivity(mGotoZomatoFoodList);
             }
@@ -225,7 +225,7 @@ public class HomeFragment extends Fragment {
         mImageBarPub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent mGotoZomatoFoodList = new Intent(getActivity(), ZomatoFoodList.class);
+                Intent mGotoZomatoFoodList = new Intent(getActivity(), ZomatoFoodListActivity.class);
                 mGotoZomatoFoodList.putExtra("RequestURLArgs", "https://developers.zomato.com/api/v2.1/search?entity_id=74&entity_type=city&category=11");
                 startActivity(mGotoZomatoFoodList);
             }
@@ -234,7 +234,7 @@ public class HomeFragment extends Fragment {
         mImageDelivery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent mGotoZomatoFoodList = new Intent(getActivity(), ZomatoFoodList.class);
+                Intent mGotoZomatoFoodList = new Intent(getActivity(), ZomatoFoodListActivity.class);
                 mGotoZomatoFoodList.putExtra("RequestURLArgs", "https://developers.zomato.com/api/v2.1/search?entity_id=74&entity_type=city&category=13");
                 startActivity(mGotoZomatoFoodList);
             }
@@ -243,7 +243,7 @@ public class HomeFragment extends Fragment {
         mImageKafe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent mGotoZomatoFoodList = new Intent(getActivity(), ZomatoFoodList.class);
+                Intent mGotoZomatoFoodList = new Intent(getActivity(), ZomatoFoodListActivity.class);
                 mGotoZomatoFoodList.putExtra("RequestURLArgs", "https://developers.zomato.com/api/v2.1/search?entity_id=74&entity_type=city&category=6");
                 startActivity(mGotoZomatoFoodList);
             }
@@ -252,7 +252,7 @@ public class HomeFragment extends Fragment {
         mImageKlubLongue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent mGotoZomatoFoodList = new Intent(getActivity(), ZomatoFoodList.class);
+                Intent mGotoZomatoFoodList = new Intent(getActivity(), ZomatoFoodListActivity.class);
                 mGotoZomatoFoodList.putExtra("RequestURLArgs", "https://developers.zomato.com/api/v2.1/search?entity_id=74&entity_type=city&category=14");
                 startActivity(mGotoZomatoFoodList);
             }
@@ -270,7 +270,7 @@ public class HomeFragment extends Fragment {
         mImageTakeaway.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent mGotoZomatoFoodList = new Intent(getActivity(), ZomatoFoodList.class);
+                Intent mGotoZomatoFoodList = new Intent(getActivity(), ZomatoFoodListActivity.class);
                 mGotoZomatoFoodList.putExtra("RequestURLArgs", "https://developers.zomato.com/api/v2.1/search?entity_id=74&entity_type=city&category=5");
                 startActivity(mGotoZomatoFoodList);
             }
