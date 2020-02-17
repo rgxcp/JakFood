@@ -35,9 +35,9 @@ public class HomeFragment extends Fragment {
         ImageView mImageRotiBakar = mView.findViewById(R.id.img_fh_roti_bakar);
         ImageView mImageSate = mView.findViewById(R.id.img_fh_sate);
         ImageView mImageSotoBetawi = mView.findViewById(R.id.img_fh_soto_betawi);
-        ImageView mImageMakanPagi = mView.findViewById(R.id.img_fh_makan_pagi);
-        ImageView mImageMakanSiang = mView.findViewById(R.id.img_fh_makan_siang);
-        ImageView mImageMakanMalam = mView.findViewById(R.id.img_fh_makan_malam);
+        ImageView mImageBreakfast = mView.findViewById(R.id.img_fh_breakfast);
+        ImageView mImageLunch = mView.findViewById(R.id.img_fh_lunch);
+        ImageView mImageDinner = mView.findViewById(R.id.img_fh_dinner);
         ImageView mImageBarPub = mView.findViewById(R.id.img_fh_bar_pub);
         ImageView mImageDelivery = mView.findViewById(R.id.img_fh_delivery);
         ImageView mImageKafe = mView.findViewById(R.id.img_fh_kafe);
@@ -195,7 +195,7 @@ public class HomeFragment extends Fragment {
         });
 
         // Activities kategori
-        mImageMakanPagi.setOnClickListener(new View.OnClickListener() {
+        mImageBreakfast.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent mGotoZomatoFoodList = new Intent(getActivity(), ZomatoFoodListActivity.class);
@@ -204,7 +204,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        mImageMakanSiang.setOnClickListener(new View.OnClickListener() {
+        mImageLunch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent mGotoZomatoFoodList = new Intent(getActivity(), ZomatoFoodListActivity.class);
@@ -213,7 +213,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        mImageMakanMalam.setOnClickListener(new View.OnClickListener() {
+        mImageDinner.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent mGotoZomatoFoodList = new Intent(getActivity(), ZomatoFoodListActivity.class);
