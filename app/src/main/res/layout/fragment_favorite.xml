@@ -8,7 +8,6 @@
 
     <SearchView
         android:id="@+id/srv_ff_favorite"
-        android:queryHint="@string/search_favorite"
         android:theme="@style/SearchGeneralTheme"
         style="@style/SearchGeneral" />
 
