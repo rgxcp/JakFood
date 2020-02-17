@@ -88,7 +88,7 @@ public class FavoriteFragment extends Fragment {
                     mFavoriteAdapter = new FavoriteAdapter(getActivity(), mArrayList);
                     mRecyclerView.setAdapter(mFavoriteAdapter);
 
-                    // Progress Bar
+                    // Progress bar
                     mProgressBar.setVisibility(View.INVISIBLE);
                 }
 
