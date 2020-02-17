@@ -148,7 +148,7 @@ public class ZomatoFoodListAdapter extends RecyclerView.Adapter<ZomatoFoodListAd
     class ListViewHolder extends RecyclerView.ViewHolder {
 
         // Deklarasi variable global
-        ImageView mImageStar, mImageThumbnail;
+        ImageView mImageThumbnail, mImageStar;
         TextView mTextName, mTextShortAddress, mTextStar;
 
         // Constructor
@@ -156,8 +156,8 @@ public class ZomatoFoodListAdapter extends RecyclerView.Adapter<ZomatoFoodListAd
             super(itemView);
 
             // Assign variable global
-            mImageStar = itemView.findViewById(R.id.img_rfl_star);
             mImageThumbnail = itemView.findViewById(R.id.img_rfl_restaurant_thumbnail);
+            mImageStar = itemView.findViewById(R.id.img_rfl_star);
             mTextName = itemView.findViewById(R.id.txt_rfl_restaurant_name);
             mTextShortAddress = itemView.findViewById(R.id.txt_rfl_short_address);
             mTextStar = itemView.findViewById(R.id.txt_rfl_star);
