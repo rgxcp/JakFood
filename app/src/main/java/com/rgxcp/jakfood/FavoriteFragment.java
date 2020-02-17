@@ -63,6 +63,9 @@ public class FavoriteFragment extends Fragment {
         LinearLayoutManager mLinearLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLinearLayoutManager);
 
+        // Setup hint search view
+        mSearchView.setQueryHint("Cari makanan favorit");
+
         // Mengecek apakah ada user aktif
         if (mUsername.isEmpty()) {
             FragmentManager mFragmentManager = getFragmentManager();
