@@ -31,7 +31,7 @@ public class EditProfileFragment extends Fragment {
     // Deklarasi variable global
     private Button mButtonSave;
     private EditText mEditFullName, mEditEmail, mEditUsername, mEditPassword;
-    private DatabaseReference mDatabaseReference;
+    private DatabaseReference mFirebase;
 
     // Validasi user
     private String mUsername;
@@ -58,8 +58,8 @@ public class EditProfileFragment extends Fragment {
         mEditPassword = mView.findViewById(R.id.edt_aep_password);
 
         // Menampilkan data ke EditText
-        mDatabaseReference = FirebaseDatabase.getInstance().getReference().child("user").child(mUsername);
-        mDatabaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+        mFirebase = FirebaseDatabase.getInstance().getReference().child("user").child(mUsername);
+        mFirebase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 mEditFullName.setText(Objects.requireNonNull(dataSnapshot.child("full_name").getValue()).toString());
@@ -93,7 +93,7 @@ public class EditProfileFragment extends Fragment {
                     mButtonSave.setEnabled(true);
                     mButtonSave.setText(mNormalState);
                 } else {
-                    mDatabaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+                    mFirebase.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             try {

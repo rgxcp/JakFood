@@ -30,7 +30,7 @@ public class ProfileFragment extends Fragment {
     // Deklarasi variable global
     private ProgressBar mProgressBar;
     private TextView mTextFullName, mTextEmail, mTextTotalFavorite;
-    private DatabaseReference mDatabaseReference;
+    private DatabaseReference mFirebase;
 
     // Validasi user
     private String USERNAME_KEY = "username_key";
@@ -67,16 +67,16 @@ public class ProfileFragment extends Fragment {
                 mFragmentManager.beginTransaction().replace(R.id.fragment_container, mEmptyUserFragment).commit();
             }
         } else {
-            mDatabaseReference = FirebaseDatabase.getInstance().getReference().child("user").child(mUsername);
-            mDatabaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            mFirebase = FirebaseDatabase.getInstance().getReference().child("user").child(mUsername);
+            mFirebase.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     mTextFullName.setText(Objects.requireNonNull(dataSnapshot.child("full_name").getValue()).toString());
                     mTextEmail.setText(Objects.requireNonNull(dataSnapshot.child("email").getValue()).toString());
                     mProgressBar.setVisibility(View.INVISIBLE);
 
-                    mDatabaseReference = FirebaseDatabase.getInstance().getReference().child("user_favorite").child(mUsername);
-                    mDatabaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+                    mFirebase = FirebaseDatabase.getInstance().getReference().child("user_favorite").child(mUsername);
+                    mFirebase.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             String mTotalFavorite = dataSnapshot.getChildrenCount() + " Makanan Favorit";

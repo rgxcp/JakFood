@@ -27,7 +27,7 @@ public class SignInActivity extends AppCompatActivity {
     // Deklarasi variable global
     private Button mButtonSignIn;
     private EditText mInputUsername, mInputPassword;
-    private DatabaseReference mDatabaseReference;
+    private DatabaseReference mFirebase;
 
     // Validasi user
     private String USERNAME_KEY = "username_key";
@@ -69,8 +69,8 @@ public class SignInActivity extends AppCompatActivity {
                     mButtonSignIn.setEnabled(true);
                     mButtonSignIn.setText(mNormalState);
                 } else {
-                    mDatabaseReference = FirebaseDatabase.getInstance().getReference().child("user").child(mUsername);
-                    mDatabaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+                    mFirebase = FirebaseDatabase.getInstance().getReference().child("user").child(mUsername);
+                    mFirebase.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             // Validasi apakah username terdaftar

@@ -26,7 +26,7 @@ public class SignUpActivity extends AppCompatActivity {
     // Deklarasi variable global
     private Button mButtonSignUp;
     private EditText mInputFullName, mInputEmail, mInputUsername, mInputPassword;
-    private DatabaseReference mDatabaseReference;
+    private DatabaseReference mFirebase;
 
     // Validasi user
     private String USERNAME_KEY = "username_key";
@@ -80,8 +80,8 @@ public class SignUpActivity extends AppCompatActivity {
                     mButtonSignUp.setEnabled(true);
                     mButtonSignUp.setText(mNormalState);
                 } else {
-                    mDatabaseReference = FirebaseDatabase.getInstance().getReference().child("user").child(mUsername);
-                    mDatabaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+                    mFirebase = FirebaseDatabase.getInstance().getReference().child("user").child(mUsername);
+                    mFirebase.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             // Validasi apakah username sudah dipakai

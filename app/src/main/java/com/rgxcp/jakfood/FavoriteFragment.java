@@ -53,7 +53,7 @@ public class FavoriteFragment extends Fragment {
 
         // Deklarasi dan assign variable lokal
         SearchView mSearchView = mView.findViewById(R.id.srv_ff_favorite);
-        DatabaseReference mDatabaseReference;
+        DatabaseReference mFirebase;
 
         // Recycler view
         mArrayList = new ArrayList<>();
@@ -74,8 +74,8 @@ public class FavoriteFragment extends Fragment {
             }
         } else {
             // Isi favorite food
-            mDatabaseReference = FirebaseDatabase.getInstance().getReference().child("user_favorite").child(mUsername);
-            mDatabaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            mFirebase = FirebaseDatabase.getInstance().getReference().child("user_favorite").child(mUsername);
+            mFirebase.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     // Looping

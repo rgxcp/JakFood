@@ -30,7 +30,7 @@ import java.util.Objects;
 public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.ListViewHolder> implements Filterable {
 
     // Deklarasi variable global
-    private DatabaseReference mDatabaseReference;
+    private DatabaseReference mFirebase;
 
     // Setup constructor
     private Context mContext;
@@ -87,17 +87,17 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.ListVi
         holder.mTextDeleteFavorite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mDatabaseReference = FirebaseDatabase.getInstance().getReference().child("user_favorite").child(mUsername).child(mIdRestoran);
-                mDatabaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+                mFirebase = FirebaseDatabase.getInstance().getReference().child("user_favorite").child(mUsername).child(mIdRestoran);
+                mFirebase.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         // Menghapus dari favorite
-                        mDatabaseReference.getRef().child("alamat_singkat").removeValue();
-                        mDatabaseReference.getRef().child("id_restoran").removeValue();
-                        mDatabaseReference.getRef().child("jenis_makanan").removeValue();
-                        mDatabaseReference.getRef().child("nama_restoran").removeValue();
-                        mDatabaseReference.getRef().child("thumbnail_restoran").removeValue();
-                        mDatabaseReference.getRef().child("waktu_akses").removeValue();
+                        mFirebase.getRef().child("alamat_singkat").removeValue();
+                        mFirebase.getRef().child("id_restoran").removeValue();
+                        mFirebase.getRef().child("jenis_makanan").removeValue();
+                        mFirebase.getRef().child("nama_restoran").removeValue();
+                        mFirebase.getRef().child("thumbnail_restoran").removeValue();
+                        mFirebase.getRef().child("waktu_akses").removeValue();
                         Toast.makeText(mContext, "Dihapus dari favorit", Toast.LENGTH_SHORT).show();
                     }
 
