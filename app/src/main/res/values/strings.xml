@@ -13,6 +13,7 @@
 
     // Home Bar
     <string name="all_food">Semua Makanan</string>
+    <string name="category">Kategori</string>
     <string name="popular">Popular</string>
 
     // Favorite Bar
@@ -24,9 +25,6 @@
     <string name="help">Cara Penggunaan</string>
     <string name="sign_out">Keluar</string>
     <string name="total_favorite">0 Makanan Favorit</string>
-
-    // Food List
-    <string name="load_more">Lihat lebih banyak restoran?</string>
 
     // Food Detail
     <string name="detail">Detail</string>
