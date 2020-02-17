@@ -18,7 +18,6 @@
 
     // Favorite Bar
     <string name="delete_favorite">Hapus dari favorit</string>
-    <string name="search_favorite">Cari makanan favorit</string>
 
     // Profile Bar
     <string name="edit_profile">Ubah Profile</string>
