@@ -24,7 +24,7 @@
                 android:layout_marginStart="24dp"
                 android:fontFamily="@font/montserrat_medium"
                 android:text="@string/popular"
-                android:textColor="#000000"
+                android:textColor="@color/blackPrimary"
                 android:textSize="16sp" />
 
             <HorizontalScrollView
@@ -44,7 +44,7 @@
                     <androidx.cardview.widget.CardView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
+                        android:layout_marginBottom="8dp"
                         app:cardCornerRadius="10dp"
                         app:cardElevation="5dp">
 
@@ -60,7 +60,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="15dp"
-                        android:layout_marginBottom="5dp"
+                        android:layout_marginBottom="8dp"
                         app:cardCornerRadius="10dp"
                         app:cardElevation="5dp">
 
@@ -76,7 +76,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="15dp"
-                        android:layout_marginBottom="5dp"
+                        android:layout_marginBottom="8dp"
                         app:cardCornerRadius="10dp"
                         app:cardElevation="5dp">
 
@@ -97,7 +97,7 @@
                 android:layout_marginStart="24dp"
                 android:fontFamily="@font/montserrat_medium"
                 android:text="@string/all_food"
-                android:textColor="#000000"
+                android:textColor="@color/blackPrimary"
                 android:textSize="16sp" />
 
             <GridLayout
@@ -324,6 +324,189 @@
                         android:layout_height="100dp"
                         android:contentDescription="@string/content_description"
                         android:src="@drawable/img_soto_betawi" />
+                </androidx.cardview.widget.CardView>
+            </GridLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="24dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="@string/category"
+                android:textColor="@color/blackPrimary"
+                android:textSize="16sp" />
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:clipToPadding="false"
+                android:columnCount="3"
+                android:rowCount="4">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:layout_gravity="start"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="5dp">
+
+                    <ImageView
+                        android:id="@+id/img_fh_breakfast"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:contentDescription="@string/content_description"
+                        android:src="@drawable/img_breakfast" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:layout_gravity="center"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="5dp">
+
+                    <ImageView
+                        android:id="@+id/img_fh_lunch"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:contentDescription="@string/content_description"
+                        android:src="@drawable/img_lunch" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:layout_gravity="end"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="5dp">
+
+                    <ImageView
+                        android:id="@+id/img_fh_dinner"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:contentDescription="@string/content_description"
+                        android:src="@drawable/img_dinner" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:layout_gravity="start"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="5dp">
+
+                    <ImageView
+                        android:id="@+id/img_fh_bar_pub"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:contentDescription="@string/content_description"
+                        android:src="@drawable/img_bar_pub" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:layout_gravity="center"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="5dp">
+
+                    <ImageView
+                        android:id="@+id/img_fh_delivery"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:contentDescription="@string/content_description"
+                        android:src="@drawable/img_delivery" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:layout_gravity="end"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="5dp">
+
+                    <ImageView
+                        android:id="@+id/img_fh_kafe"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:contentDescription="@string/content_description"
+                        android:src="@drawable/img_kafe" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:layout_gravity="start"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="5dp">
+
+                    <ImageView
+                        android:id="@+id/img_fh_klub_longue"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:contentDescription="@string/content_description"
+                        android:src="@drawable/img_klub_longue" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:layout_gravity="center"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="5dp">
+
+                    <ImageView
+                        android:id="@+id/img_fh_nightlife"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:contentDescription="@string/content_description"
+                        android:src="@drawable/img_nightlife" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:layout_gravity="end"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="5dp">
+
+                    <ImageView
+                        android:id="@+id/img_fh_takeaway"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:contentDescription="@string/content_description"
+                        android:src="@drawable/img_takeaway" />
                 </androidx.cardview.widget.CardView>
             </GridLayout>
         </LinearLayout>
