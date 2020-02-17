@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -25,11 +24,6 @@ import java.util.Objects;
 
 public class FoodListActivity extends AppCompatActivity {
 
-    // Deklarasi variable global
-    private ProgressBar mProgressBar;
-    private String mRequestURL;
-    private TextView mTextLoadMore;
-
     // Setup recycler view
     private ArrayList<FoodList> mArrayList;
     private FoodListAdapter mFoodListAdapter;
@@ -40,15 +34,11 @@ public class FoodListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_list);
 
-        // Assign variable global
-        mProgressBar = findViewById(R.id.pbr_afl_loading);
-        mTextLoadMore = findViewById(R.id.txt_afl_load_more);
-
         // Deklarasi dan assign variable lokal
         Button mButtonBack = findViewById(R.id.btn_afl_back);
         SearchView mSearchView = findViewById(R.id.srv_afl_food);
         TextView mTextFoodName = findViewById(R.id.txt_afl_food_name);
-        DatabaseReference mDatabaseReference;
+        DatabaseReference mFirebase;
 
         // Recycler view
         mArrayList = new ArrayList<>();
@@ -62,18 +52,15 @@ public class FoodListActivity extends AppCompatActivity {
         Bundle mBundle = getIntent().getExtras();
         String mJenisMakanan = Objects.requireNonNull(mBundle).getString("JenisMakananArgs");
         String mNamaMakanan = Objects.requireNonNull(mBundle).getString("NamaMakananArgs");
-        mRequestURL = mBundle.getString("RequestURLArgs");
 
         // Setup hint search view
         mTextFoodName.setText(mNamaMakanan);
-        if (mNamaMakanan != null) {
-            mSearchView.setQueryHint("Cari " + mNamaMakanan.toLowerCase() + " apa?");
-        }
+        mSearchView.setQueryHint("Cari " + Objects.requireNonNull(mNamaMakanan).toLowerCase() + " apa?");
 
         // Isi food list
         if (mJenisMakanan != null) {
-            mDatabaseReference = FirebaseDatabase.getInstance().getReference().child("semua_makanan").child(mJenisMakanan);
-            mDatabaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            mFirebase = FirebaseDatabase.getInstance().getReference().child("semua_makanan").child(mJenisMakanan);
+            mFirebase.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     // Looping
@@ -85,8 +72,10 @@ public class FoodListActivity extends AppCompatActivity {
                     // Setup adapter
                     mFoodListAdapter = new FoodListAdapter(FoodListActivity.this, mArrayList);
                     mRecyclerView.setAdapter(mFoodListAdapter);
+
+                    // Progress bar
+                    ProgressBar mProgressBar = findViewById(R.id.pbr_afl_loading);
                     mProgressBar.setVisibility(View.INVISIBLE);
-                    mTextLoadMore.setVisibility(View.VISIBLE);
                 }
 
                 @Override
@@ -101,15 +90,6 @@ public class FoodListActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 onBackPressed();
-            }
-        });
-
-        mTextLoadMore.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent mGotoZomatoFoodList = new Intent(FoodListActivity.this, ZomatoFoodListActivity.class);
-                mGotoZomatoFoodList.putExtra("RequestURLArgs", mRequestURL);
-                startActivity(mGotoZomatoFoodList);
             }
         });
 
