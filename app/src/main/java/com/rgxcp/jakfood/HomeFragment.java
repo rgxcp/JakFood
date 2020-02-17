@@ -35,8 +35,17 @@ public class HomeFragment extends Fragment {
         ImageView mImageRotiBakar = mView.findViewById(R.id.img_fh_roti_bakar);
         ImageView mImageSate = mView.findViewById(R.id.img_fh_sate);
         ImageView mImageSotoBetawi = mView.findViewById(R.id.img_fh_soto_betawi);
+        ImageView mImageMakanPagi = mView.findViewById(R.id.img_fh_makan_pagi);
+        ImageView mImageMakanSiang = mView.findViewById(R.id.img_fh_makan_siang);
+        ImageView mImageMakanMalam = mView.findViewById(R.id.img_fh_makan_malam);
+        ImageView mImageBarPub = mView.findViewById(R.id.img_fh_bar_pub);
+        ImageView mImageDelivery = mView.findViewById(R.id.img_fh_delivery);
+        ImageView mImageKafe = mView.findViewById(R.id.img_fh_kafe);
+        ImageView mImageKlubLongue = mView.findViewById(R.id.img_fh_klub_longue);
+        ImageView mImageNightlife = mView.findViewById(R.id.img_fh_nightlife);
+        ImageView mImageTakeaway = mView.findViewById(R.id.img_fh_takeaway);
 
-        // Activities untuk populer
+        // Activities populer
         mImagePopuler1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,7 +73,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        // Activities untuk semua makanan
+        // Activities semua makanan
         mImageAyamBakar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -182,6 +191,88 @@ public class HomeFragment extends Fragment {
                 mGotoFoodList.putExtra("JenisMakananArgs", "soto_betawi");
                 mGotoFoodList.putExtra("NamaMakananArgs", "Soto Betawi");
                 startActivity(mGotoFoodList);
+            }
+        });
+
+        // Activities kategori
+        mImageMakanPagi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent mGotoZomatoFoodList = new Intent(getActivity(), ZomatoFoodList.class);
+                mGotoZomatoFoodList.putExtra("RequestURLArgs", "https://developers.zomato.com/api/v2.1/search?entity_id=74&entity_type=city&category=8");
+                startActivity(mGotoZomatoFoodList);
+            }
+        });
+
+        mImageMakanSiang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent mGotoZomatoFoodList = new Intent(getActivity(), ZomatoFoodList.class);
+                mGotoZomatoFoodList.putExtra("RequestURLArgs", "https://developers.zomato.com/api/v2.1/search?entity_id=74&entity_type=city&category=9");
+                startActivity(mGotoZomatoFoodList);
+            }
+        });
+
+        mImageMakanMalam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent mGotoZomatoFoodList = new Intent(getActivity(), ZomatoFoodList.class);
+                mGotoZomatoFoodList.putExtra("RequestURLArgs", "https://developers.zomato.com/api/v2.1/search?entity_id=74&entity_type=city&category=10");
+                startActivity(mGotoZomatoFoodList);
+            }
+        });
+
+        mImageBarPub.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent mGotoZomatoFoodList = new Intent(getActivity(), ZomatoFoodList.class);
+                mGotoZomatoFoodList.putExtra("RequestURLArgs", "https://developers.zomato.com/api/v2.1/search?entity_id=74&entity_type=city&category=11");
+                startActivity(mGotoZomatoFoodList);
+            }
+        });
+
+        mImageDelivery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent mGotoZomatoFoodList = new Intent(getActivity(), ZomatoFoodList.class);
+                mGotoZomatoFoodList.putExtra("RequestURLArgs", "https://developers.zomato.com/api/v2.1/search?entity_id=74&entity_type=city&category=13");
+                startActivity(mGotoZomatoFoodList);
+            }
+        });
+
+        mImageKafe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent mGotoZomatoFoodList = new Intent(getActivity(), ZomatoFoodList.class);
+                mGotoZomatoFoodList.putExtra("RequestURLArgs", "https://developers.zomato.com/api/v2.1/search?entity_id=74&entity_type=city&category=6");
+                startActivity(mGotoZomatoFoodList);
+            }
+        });
+
+        mImageKlubLongue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent mGotoZomatoFoodList = new Intent(getActivity(), ZomatoFoodList.class);
+                mGotoZomatoFoodList.putExtra("RequestURLArgs", "https://developers.zomato.com/api/v2.1/search?entity_id=74&entity_type=city&category=14");
+                startActivity(mGotoZomatoFoodList);
+            }
+        });
+
+        mImageNightlife.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent mGotoZomatoFoodList = new Intent(getActivity(), ZomatoFoodList.class);
+                mGotoZomatoFoodList.putExtra("RequestURLArgs", "https://developers.zomato.com/api/v2.1/search?entity_id=74&entity_type=city&category=3");
+                startActivity(mGotoZomatoFoodList);
+            }
+        });
+
+        mImageTakeaway.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent mGotoZomatoFoodList = new Intent(getActivity(), ZomatoFoodList.class);
+                mGotoZomatoFoodList.putExtra("RequestURLArgs", "https://developers.zomato.com/api/v2.1/search?entity_id=74&entity_type=city&category=5");
+                startActivity(mGotoZomatoFoodList);
             }
         });
 
