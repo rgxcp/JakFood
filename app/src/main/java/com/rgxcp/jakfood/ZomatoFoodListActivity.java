@@ -63,7 +63,7 @@ public class ZomatoFoodListActivity extends AppCompatActivity {
         mSearchView.setQueryHint("Cari restoran");
 
         // Parsing data
-        mParseJSON(mRequestURL);
+        parseJSON(mRequestURL);
 
         // Activities
         mButtonBack.setOnClickListener(new View.OnClickListener() {
@@ -87,7 +87,7 @@ public class ZomatoFoodListActivity extends AppCompatActivity {
         });
     }
 
-    private void mParseJSON(String mRequestURL) {
+    private void parseJSON(String mRequestURL) {
         // Object request
         JsonObjectRequest mJSONObjectRequest = new JsonObjectRequest(Request.Method.GET, mRequestURL, null, new Response.Listener<JSONObject>() {
             @Override
