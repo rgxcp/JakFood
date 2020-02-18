@@ -117,15 +117,15 @@ public class ZomatoFoodListActivity extends AppCompatActivity {
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
+                } finally {
+                    // Setup adapter
+                    mZomatoFoodListAdapter = new ZomatoFoodListAdapter(ZomatoFoodListActivity.this, mList);
+                    mRecyclerView.setAdapter(mZomatoFoodListAdapter);
+
+                    // Progress bar
+                    ProgressBar mProgressBar = findViewById(R.id.pbr_azfl_loading);
+                    mProgressBar.setVisibility(View.INVISIBLE);
                 }
-
-                // Setup adapter
-                mZomatoFoodListAdapter = new ZomatoFoodListAdapter(ZomatoFoodListActivity.this, mList);
-                mRecyclerView.setAdapter(mZomatoFoodListAdapter);
-
-                // Progress bar
-                ProgressBar mProgressBar = findViewById(R.id.pbr_azfl_loading);
-                mProgressBar.setVisibility(View.INVISIBLE);
             }
         }, new Response.ErrorListener() {
             @Override
