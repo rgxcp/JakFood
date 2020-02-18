@@ -28,7 +28,9 @@
     // Food Detail
     <string name="detail">Detail</string>
     <string name="menu">Menu</string>
+    <string name="photo">Foto</string>
     <string name="price">Harga</string>
+    <string name="review">Ulasan</string>
 
     // Empty User
     <string name="empty_user_description">Kamu harus masuk atau daftar \nterlebih dahulu untuk menggunakan \nsemua fitur aplikasi JakFood.</string>
