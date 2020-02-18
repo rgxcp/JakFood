@@ -133,13 +133,13 @@ public class ZomatoFoodListActivity extends AppCompatActivity {
                 error.printStackTrace();
             }
         }) {
-          @Override
-          public Map<String, String> getHeaders() {
-              Map<String, String> mHeader = new HashMap<>();
-              mHeader.put("Accept", "application/json");
-              mHeader.put("user-key", getString(R.string.zomato_key));
-              return mHeader;
-          }
+            @Override
+            public Map<String, String> getHeaders() {
+                Map<String, String> mHeader = new HashMap<>();
+                mHeader.put("Accept", "application/json");
+                mHeader.put("user-key", getString(R.string.zomato_key));
+                return mHeader;
+            }
         };
 
         // Request queue
