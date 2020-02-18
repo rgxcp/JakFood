@@ -122,6 +122,8 @@
                 <TextView
                     android:id="@+id/txt_azfd_open_day_hour"
                     android:layout_marginTop="8dp"
+                    android:layout_marginEnd="32dp"
+                    android:lineSpacingExtra="4dp"
                     style="@style/TextDetailDescription" />
 
                 <TextView
