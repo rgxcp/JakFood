@@ -215,7 +215,7 @@ public class FoodDetailActivity extends AppCompatActivity {
                                     public void onClick(View view) {
                                         MenuFragment mMenuFragment = new MenuFragment();
                                         FragmentManager mFragmentManager = getSupportFragmentManager();
-                                        mFragmentManager.beginTransaction().replace(R.id.menu_container, mMenuFragment).addToBackStack(null).commit();
+                                        mFragmentManager.beginTransaction().replace(R.id.menu_afd_container, mMenuFragment).addToBackStack(null).commit();
 
                                         Bundle mBundle = new Bundle();
                                         mBundle.putString("MenuArgs", mMenu);
@@ -336,7 +336,7 @@ public class FoodDetailActivity extends AppCompatActivity {
                             public void onClick(View view) {
                                 MenuFragment mMenuFragment = new MenuFragment();
                                 FragmentManager mFragmentManager = getSupportFragmentManager();
-                                mFragmentManager.beginTransaction().replace(R.id.menu_container, mMenuFragment).addToBackStack(null).commit();
+                                mFragmentManager.beginTransaction().replace(R.id.menu_afd_container, mMenuFragment).addToBackStack(null).commit();
 
                                 Bundle mBundle = new Bundle();
                                 mBundle.putString("MenuArgs", mMenu);
