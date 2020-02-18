@@ -36,18 +36,22 @@
 
         <TextView
             android:id="@+id/txt_rfl_restaurant_name"
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
             android:fontFamily="@font/montserrat_medium"
+            android:maxLines="1"
             android:textColor="@color/blackPrimary"
             android:textSize="14sp" />
 
         <TextView
             android:id="@+id/txt_rfl_short_address"
-            android:layout_width="match_parent"
-            android:layout_height="18dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:ellipsize="end"
             android:fontFamily="@font/montserrat_regular"
+            android:maxLines="1"
             android:textSize="13sp" />
 
         <LinearLayout
