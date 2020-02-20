@@ -1,66 +1,66 @@
 <resources>
     <string name="app_name">JakFood</string>
 
-    // Get Started
+    <!-- Get Started -->
     <string name="back">KEMBALI</string>
     <string name="finish">SELESAI</string>
     <string name="next">LANJUT</string>
 
-    // Navigation Bar
+    <!-- Navigation Bar -->
     <string name="favorite">Favorite</string>
     <string name="home">Home</string>
     <string name="profile">Profile</string>
 
-    // Home Bar
+    <!-- Home Bar -->
     <string name="all_food">Semua Makanan</string>
     <string name="category">Kategori</string>
     <string name="popular">Popular</string>
 
-    // Favorite Bar
+    <!-- Favorite Bar -->
     <string name="delete_favorite">Hapus dari favorit</string>
 
-    // Profile Bar
+    <!-- Profile Bar -->
     <string name="edit_profile">Ubah Profile</string>
     <string name="help">Cara Penggunaan</string>
     <string name="sign_out">Keluar</string>
     <string name="total_favorite">0 Makanan Favorit</string>
 
-    // Food Detail
+    <!-- Food Detail -->
     <string name="detail">Detail</string>
     <string name="menu">Menu</string>
     <string name="photo">Foto</string>
     <string name="price">Harga</string>
     <string name="review">Ulasan</string>
 
-    // Empty User
+    <!-- Empty User -->
     <string name="empty_user_description">Kamu harus masuk atau daftar \nterlebih dahulu untuk menggunakan \nsemua fitur aplikasi JakFood.</string>
     <string name="empty_user_heading">UH OH!</string>
 
-    // Sign In
+    <!-- Sign In -->
     <string name="sign_in">MASUK</string>
     <string name="sign_in_welcome">Halo, \nSelamat Datang!</string>
 
-    // Sign Up
+    <!-- Sign Up -->
     <string name="sign_up">DAFTAR</string>
     <string name="sign_up_welcome">Halo, \nDaftar Dulu Yuk!</string>
 
-    // Sign Up Success
+    <!-- Sign Up Success -->
     <string name="success_description">Kamu sudah terdaftar. \nAyo mulai eksplorasi JakFood \nsekarang.</string>
     <string name="success_heading">SELAMAT!</string>
     <string name="success_start">MULAI</string>
 
-    // Edit Profile
+    <!-- Edit Profile -->
     <string name="edit_profile_welcome">Salah? \nPerbaiki di Sini!</string>
     <string name="save">SIMPAN</string>
 
-    // About
+    <!-- About -->
     <string name="about_description_first">JakFood, aplikasi pencarian referensi makanan di Jakarta.</string>
     <string name="about_description_second">Dibuat oleh Kelompok 2 kelas 3KA17 untuk memenuhi tugas mata kuliah Interaksi Manusia Komputer. Universitas Gunadarma PTA 2019/2020.</string>
     <string name="about_description_third">Dibantu dengan data oleh Zomato, asset oleh Freepik &amp; Icons8, dan icon oleh Flaticon.</string>
 
-    // Global
+    <!-- Global -->
     <string name="about">Tentang Aplikasi</string>
-    <string name="content_description">""</string>
+    <string name="content_description">@null</string>
     <string name="email">Alamat Email</string>
     <string name="copyright">©2019–2020, JakFood</string>
     <string name="full_name">Nama Lengkap</string>
