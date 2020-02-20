@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:gravity="center"
+    android:orientation="vertical"
     tools:context=".SignUpActivity">
 
     <LinearLayout
@@ -13,8 +12,8 @@
         android:layout_height="60dp"
         android:layout_marginStart="64dp"
         android:layout_marginEnd="64dp"
-        android:orientation="horizontal"
         android:gravity="center"
+        android:orientation="horizontal"
         android:weightSum="4">
 
         <ImageView
@@ -25,48 +24,48 @@
             android:src="@drawable/vc_logo" />
 
         <TextView
-            android:text="@string/sign_up_welcome"
-            style="@style/TextWelcome" />
+            style="@style/TextWelcome"
+            android:text="@string/sign_up_welcome" />
     </LinearLayout>
 
     <EditText
         android:id="@+id/edt_asu_full_name"
+        style="@style/EditTextGeneral"
         android:layout_marginTop="32dp"
         android:hint="@string/full_name"
         android:importantForAutofill="no"
-        android:inputType="text"
-        style="@style/EditTextGeneral"/>
+        android:inputType="text" />
 
     <EditText
         android:id="@+id/edt_asu_email"
+        style="@style/EditTextGeneral"
         android:layout_marginTop="24dp"
         android:hint="@string/email"
         android:importantForAutofill="no"
-        android:inputType="textEmailAddress"
-        style="@style/EditTextGeneral" />
+        android:inputType="textEmailAddress" />
 
     <EditText
         android:id="@+id/edt_asu_username"
+        style="@style/EditTextGeneral"
         android:layout_marginTop="24dp"
         android:hint="@string/username"
         android:importantForAutofill="no"
-        android:inputType="text"
-        style="@style/EditTextGeneral" />
+        android:inputType="text" />
 
     <EditText
         android:id="@+id/edt_asu_password"
+        style="@style/EditTextGeneral"
         android:layout_marginTop="24dp"
         android:hint="@string/password"
         android:importantForAutofill="no"
-        android:inputType="textVisiblePassword"
-        style="@style/EditTextGeneral"/>
+        android:inputType="textVisiblePassword" />
 
     <Button
         android:id="@+id/btn_asu_sign_up"
+        style="@style/ButtonGeneral"
         android:layout_marginTop="24dp"
         android:background="@drawable/bg_rounded_red"
         android:text="@string/sign_up"
-        android:textColor="@color/whitePrimary"
-        style="@style/ButtonGeneral"/>
+        android:textColor="@color/whitePrimary" />
 
 </LinearLayout>

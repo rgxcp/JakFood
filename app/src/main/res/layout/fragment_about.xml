@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,10 +9,10 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:layout_marginStart="24dp"
-        android:orientation="horizontal"
-        android:gravity="center">
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/btn_fa_back"
@@ -22,32 +21,31 @@
             android:background="@drawable/ic_back" />
 
         <TextView
-            android:text="@string/about"
-            style="@style/TextBar" />
+            style="@style/TextBar"
+            android:text="@string/about" />
     </LinearLayout>
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="170dp"
-        android:layout_marginTop="48dp"
         android:layout_marginStart="24dp"
+        android:layout_marginTop="48dp"
         android:layout_marginEnd="24dp"
         android:contentDescription="@string/content_description"
         android:src="@drawable/vc_about" />
 
     <TextView
-        android:text="@string/about_description_first"
-        style="@style/TextAboutDescription" />
+        style="@style/TextAboutDescription"
+        android:text="@string/about_description_first" />
 
     <TextView
-        android:text="@string/about_description_second"
-        style="@style/TextAboutDescription" />
+        style="@style/TextAboutDescription"
+        android:text="@string/about_description_second" />
 
     <TextView
-        android:text="@string/about_description_third"
-        style="@style/TextAboutDescription" />
+        style="@style/TextAboutDescription"
+        android:text="@string/about_description_third" />
 
-    <TextView
-        style="@style/TextCopyright" />
+    <TextView style="@style/TextCopyright" />
 
 </LinearLayout>

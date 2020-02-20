@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/cnt_afd_layout"
+    android:id="@+id/cnt_azfd_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FoodDetailActivity">
@@ -19,24 +18,24 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:background="@drawable/ic_lens"
-        app:layout_constraintTop_toTopOf="@id/btn_azfd_back"
-        app:layout_constraintStart_toStartOf="@id/btn_azfd_back"
+        app:layout_constraintBottom_toBottomOf="@id/btn_azfd_back"
         app:layout_constraintEnd_toEndOf="@id/btn_azfd_back"
-        app:layout_constraintBottom_toBottomOf="@id/btn_azfd_back" />
+        app:layout_constraintStart_toStartOf="@id/btn_azfd_back"
+        app:layout_constraintTop_toTopOf="@id/btn_azfd_back" />
 
     <Button
         android:id="@+id/btn_azfd_back"
         style="@style/ButtonBack"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scrollbars="none"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -67,8 +66,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
                 android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
                 android:layout_marginEnd="24dp"
                 android:orientation="vertical">
 
@@ -110,74 +109,83 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
                 android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
                 android:layout_marginEnd="24dp"
                 android:orientation="vertical">
 
                 <TextView
-                    android:text="@string/detail"
-                    style="@style/TextDetailHeading" />
+                    style="@style/TextDetailHeading"
+                    android:text="@string/detail" />
 
                 <TextView
                     android:id="@+id/txt_azfd_open_day_hour"
+                    style="@style/TextDetailDescription"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="32dp"
-                    android:lineSpacingExtra="4dp"
-                    style="@style/TextDetailDescription" />
+                    android:lineSpacingExtra="4dp" />
 
                 <TextView
                     android:id="@+id/txt_azfd_star_review"
-                    android:layout_marginTop="6dp"
-                    style="@style/TextDetailDescription" />
+                    style="@style/TextDetailDescription"
+                    android:layout_marginTop="6dp" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
                 android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
                 android:layout_marginEnd="24dp"
                 android:orientation="vertical">
 
                 <TextView
-                    android:text="@string/price"
-                    style="@style/TextDetailHeading" />
+                    style="@style/TextDetailHeading"
+                    android:text="@string/price" />
 
                 <TextView
                     android:id="@+id/txt_azfd_approx_price"
-                    android:layout_marginTop="8dp"
-                    style="@style/TextDetailDescription" />
+                    style="@style/TextDetailDescription"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:clipToPadding="false"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TextDetailHeading"
+                    android:text="@string/photo" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcv_azfd_photo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                android:paddingStart="24dp"
-                android:paddingEnd="24dp"
-                android:paddingBottom="24dp"
-                android:orientation="vertical"
-                android:clipToPadding="false">
+                android:clipToPadding="false"
+                android:orientation="vertical">
 
                 <TextView
-                    android:text="@string/menu"
-                    style="@style/TextDetailHeading" />
+                    style="@style/TextDetailHeading"
+                    android:layout_marginStart="24dp"
+                    android:text="@string/review" />
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcv_azfd_review"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="3dp">
-
-                    <ImageView
-                        android:id="@+id/img_azfd_menu"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:contentDescription="@string/content_description"
-                        android:src="@drawable/vc_placeholder" />
-                </androidx.cardview.widget.CardView>
+                    android:layout_marginTop="8dp" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
@@ -189,8 +197,8 @@
         android:layout_marginBottom="24dp"
         app:cardCornerRadius="5dp"
         app:cardElevation="3dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <Button
             android:id="@+id/btn_azfd_maps"
@@ -200,7 +208,7 @@
     </androidx.cardview.widget.CardView>
 
     <FrameLayout
-        android:id="@+id/menu_azfd_container"
+        android:id="@+id/photo_azfd_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

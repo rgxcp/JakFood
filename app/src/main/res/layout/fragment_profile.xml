@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -17,8 +16,8 @@
             android:id="@+id/sov_fp_profile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp"
             android:elevation="8dp">
 
             <ImageView
@@ -31,19 +30,19 @@
 
         <ProgressBar
             android:id="@+id/pbr_fp_loading"
-            android:layout_below="@id/sov_fp_profile"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginTop="16dp"
-            android:layout_centerHorizontal="true" />
+            android:layout_below="@id/sov_fp_profile"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp" />
 
         <TextView
             android:id="@+id/txt_fp_full_name"
-            android:layout_below="@id/sov_fp_profile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_below="@id/sov_fp_profile"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
             android:fontFamily="@font/montserrat_semi_bold"
             android:textAlignment="center"
             android:textColor="@color/blackPrimary"
@@ -51,11 +50,11 @@
 
         <TextView
             android:id="@+id/txt_fp_email"
-            android:layout_below="@id/txt_fp_full_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_below="@id/txt_fp_full_name"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
             android:fontFamily="@font/montserrat_light"
             android:textAlignment="center"
             android:textColor="@color/blackPrimary"
@@ -63,11 +62,11 @@
 
         <TextView
             android:id="@+id/txt_fp_edit_profile"
-            android:layout_below="@id/txt_fp_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_below="@id/txt_fp_email"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
             android:fontFamily="@font/montserrat_regular"
             android:text="@string/edit_profile"
             android:textAlignment="center"
@@ -78,12 +77,12 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
         android:layout_marginStart="24dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="24dp"
+        android:gravity="center"
         android:orientation="horizontal"
-        android:weightSum="2"
-        android:gravity="center">
+        android:weightSum="2">
 
         <ImageView
             android:layout_width="16dp"
@@ -94,21 +93,21 @@
 
         <TextView
             android:id="@+id/txt_fp_total_favorite"
+            style="@style/TextProfileMenu"
             android:layout_weight="2"
             android:text="@string/total_favorite"
-            android:textColor="@color/blackPrimary"
-            style="@style/TextProfileMenu" />
+            android:textColor="@color/blackPrimary" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
         android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
+        android:gravity="center"
         android:orientation="horizontal"
-        android:weightSum="2"
-        android:gravity="center">
+        android:weightSum="2">
 
         <ImageView
             android:layout_width="16dp"
@@ -119,21 +118,21 @@
 
         <TextView
             android:id="@+id/txt_fp_help"
+            style="@style/TextProfileMenu"
             android:layout_weight="2"
             android:text="@string/help"
-            android:textColor="@color/blackPrimary"
-            style="@style/TextProfileMenu" />
+            android:textColor="@color/blackPrimary" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
         android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
+        android:gravity="center"
         android:orientation="horizontal"
-        android:weightSum="2"
-        android:gravity="center">
+        android:weightSum="2">
 
         <ImageView
             android:layout_width="16dp"
@@ -144,21 +143,21 @@
 
         <TextView
             android:id="@+id/txt_fp_about"
+            style="@style/TextProfileMenu"
             android:layout_weight="2"
             android:text="@string/about"
-            android:textColor="#000000"
-            style="@style/TextProfileMenu" />
+            android:textColor="#000000" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
         android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
+        android:gravity="center"
         android:orientation="horizontal"
-        android:weightSum="2"
-        android:gravity="center">
+        android:weightSum="2">
 
         <ImageView
             android:layout_width="16dp"
@@ -169,13 +168,12 @@
 
         <TextView
             android:id="@+id/txt_fp_sign_out"
+            style="@style/TextProfileMenu"
             android:layout_weight="2"
             android:text="@string/sign_out"
-            android:textColor="@color/redPrimary"
-            style="@style/TextProfileMenu" />
+            android:textColor="@color/redPrimary" />
     </LinearLayout>
 
-    <TextView
-        style="@style/TextCopyright" />
+    <TextView style="@style/TextCopyright" />
 
 </LinearLayout>

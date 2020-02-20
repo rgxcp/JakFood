@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/redPrimary"
     android:gravity="center"
+    android:orientation="vertical"
     tools:context=".SignUpSuccessActivity">
 
     <ImageView
@@ -21,8 +20,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:layout_marginStart="64dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="64dp"
         android:fontFamily="@font/montserrat_semi_bold"
         android:text="@string/success_heading"
@@ -33,8 +32,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:layout_marginStart="64dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="64dp"
         android:fontFamily="@font/montserrat_regular"
         android:lineSpacingExtra="7dp"
@@ -45,10 +44,10 @@
 
     <Button
         android:id="@+id/btn_asus_start"
+        style="@style/ButtonGeneral"
         android:layout_marginTop="32dp"
         android:background="@drawable/bg_rounded_white"
         android:text="@string/success_start"
-        android:textColor="@color/redPrimary"
-        style="@style/ButtonGeneral" />
+        android:textColor="@color/redPrimary" />
 
 </LinearLayout>
