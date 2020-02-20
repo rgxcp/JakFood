@@ -30,6 +30,9 @@ import java.util.Objects;
 
 public class ZomatoFoodListActivity extends AppCompatActivity {
 
+    // Deklarasi variable global
+    private ProgressBar mProgressBar;
+
     // Setup recycler view
     private List<ZomatoFoodList> mList;
     private RecyclerView mRecyclerView;
@@ -39,6 +42,9 @@ public class ZomatoFoodListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_zomato_food_list);
+
+        // Assign variable global
+        mProgressBar = findViewById(R.id.pbr_azfl_loading);
 
         // Deklarasi dan assign variable lokal
         Button mButtonBack = findViewById(R.id.btn_azfl_back);
@@ -62,7 +68,7 @@ public class ZomatoFoodListActivity extends AppCompatActivity {
         mTextCategory.setText(mCategory);
         mSearchView.setQueryHint("Cari restoran");
 
-        // Parsing data
+        // Parsing JSON
         parseJSON(mRequestURL);
 
         // Activities
@@ -106,11 +112,11 @@ public class ZomatoFoodListActivity extends AppCompatActivity {
 
                         // Mengirim data ke Setter
                         ZomatoFoodList mZomatoFoodList = new ZomatoFoodList();
-                        mZomatoFoodList.setAggregate_rating(mUserRatingObject.getString("aggregate_rating"));
                         mZomatoFoodList.setId(mRestaurantObject.getString("id"));
                         mZomatoFoodList.setName(mRestaurantObject.getString("name"));
-                        mZomatoFoodList.setLocality_verbose(mLocationObject.getString("locality_verbose"));
                         mZomatoFoodList.setThumb(mRestaurantObject.getString("thumb"));
+                        mZomatoFoodList.setLocality_verbose(mLocationObject.getString("locality_verbose"));
+                        mZomatoFoodList.setAggregate_rating(mUserRatingObject.getString("aggregate_rating"));
 
                         // Menambahkan semua data ke model
                         mList.add(mZomatoFoodList);
@@ -123,7 +129,6 @@ public class ZomatoFoodListActivity extends AppCompatActivity {
                     mRecyclerView.setAdapter(mZomatoFoodListAdapter);
 
                     // Progress bar
-                    ProgressBar mProgressBar = findViewById(R.id.pbr_azfl_loading);
                     mProgressBar.setVisibility(View.INVISIBLE);
                 }
             }
