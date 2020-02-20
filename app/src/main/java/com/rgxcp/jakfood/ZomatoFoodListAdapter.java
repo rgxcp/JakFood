@@ -24,13 +24,13 @@ public class ZomatoFoodListAdapter extends RecyclerView.Adapter<ZomatoFoodListAd
     // Setup constructor
     private Context mContext;
     private List<ZomatoFoodList> mList;
-    private List<ZomatoFoodList> mListFilter;
+    private List<ZomatoFoodList> mListSearch;
 
     // Constructor
     ZomatoFoodListAdapter(Context mContext, List<ZomatoFoodList> mList) {
         this.mContext = mContext;
         this.mList = mList;
-        mListFilter = new ArrayList<>(mList);
+        mListSearch = new ArrayList<>(mList);
     }
 
     // Recycler view methods
@@ -46,7 +46,7 @@ public class ZomatoFoodListAdapter extends RecyclerView.Adapter<ZomatoFoodListAd
         Double mStarDouble = Double.valueOf(mList.get(position).getAggregate_rating());
         String mName = mList.get(position).getName();
         String mShortAddress = mList.get(position).getLocality_verbose();
-        String mStarString = mList.get(position).getAggregate_rating();
+        String mStar = mList.get(position).getAggregate_rating();
         String mThumbnail = mList.get(position).getThumb();
         RequestOptions mRequestOptions = new RequestOptions().centerCrop().placeholder(R.drawable.vc_placeholder).error(R.drawable.vc_placeholder);
 
@@ -68,8 +68,8 @@ public class ZomatoFoodListAdapter extends RecyclerView.Adapter<ZomatoFoodListAd
         // Mengisi data layout recycler view
         holder.mTextName.setText(mName);
         holder.mTextShortAddress.setText(mShortAddress);
-        holder.mTextStar.setText(mStarString);
-        Glide.with(mContext).load(mThumbnail).apply(mRequestOptions).into(holder.mImageThumbnail);
+        holder.mTextStar.setText(mStar);
+        Glide.with(mContext).load(mThumbnail).apply(mRequestOptions).into(holder.mImageRestaurantThumbnail);
 
         // Activities
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -111,10 +111,10 @@ public class ZomatoFoodListAdapter extends RecyclerView.Adapter<ZomatoFoodListAd
 
             // Cari list
             if (charSequence == null || charSequence.length() == 0) {
-                mListFiltered.addAll(mListFilter);
+                mListFiltered.addAll(mListSearch);
             } else {
                 String mQuery = charSequence.toString().toLowerCase().trim();
-                for (ZomatoFoodList mZomatoFoodList : mListFilter) {
+                for (ZomatoFoodList mZomatoFoodList : mListSearch) {
                     // Berdasarkan nama restoran
                     if (mZomatoFoodList.getName().toLowerCase().contains(mQuery)) {
                         mListFiltered.add(mZomatoFoodList);
@@ -148,7 +148,7 @@ public class ZomatoFoodListAdapter extends RecyclerView.Adapter<ZomatoFoodListAd
     class ListViewHolder extends RecyclerView.ViewHolder {
 
         // Deklarasi variable global
-        ImageView mImageThumbnail, mImageStar;
+        ImageView mImageRestaurantThumbnail, mImageStar;
         TextView mTextName, mTextShortAddress, mTextStar;
 
         // Constructor
@@ -156,7 +156,7 @@ public class ZomatoFoodListAdapter extends RecyclerView.Adapter<ZomatoFoodListAd
             super(itemView);
 
             // Assign variable global
-            mImageThumbnail = itemView.findViewById(R.id.img_rfl_restaurant_thumbnail);
+            mImageRestaurantThumbnail = itemView.findViewById(R.id.img_rfl_restaurant_thumbnail);
             mImageStar = itemView.findViewById(R.id.img_rfl_star);
             mTextName = itemView.findViewById(R.id.txt_rfl_restaurant_name);
             mTextShortAddress = itemView.findViewById(R.id.txt_rfl_short_address);
