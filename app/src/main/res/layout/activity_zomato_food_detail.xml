@@ -155,7 +155,6 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="24dp"
-                android:clipToPadding="false"
                 android:orientation="vertical">
 
                 <TextView
@@ -172,13 +171,13 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:clipToPadding="false"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="24dp"
                 android:orientation="vertical">
 
                 <TextView
                     style="@style/TextDetailHeading"
-                    android:layout_marginStart="24dp"
                     android:text="@string/review" />
 
                 <androidx.recyclerview.widget.RecyclerView
