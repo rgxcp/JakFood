@@ -65,7 +65,18 @@ public class FoodListActivity extends AppCompatActivity {
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     // Looping
                     for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                        FoodList mFoodList = dataSnapshot1.getValue(FoodList.class);
+                        // FoodList mFoodList = dataSnapshot1.getValue(FoodList.class);
+
+                        // Mengirim data ke Setter
+                        FoodList mFoodList = new FoodList();
+                        mFoodList.setBintang(Double.valueOf(Objects.requireNonNull(dataSnapshot1.child("bintang").getValue()).toString()));
+                        mFoodList.setAlamat_singkat(Objects.requireNonNull(dataSnapshot1.child("alamat_singkat").getValue()).toString());
+                        mFoodList.setId_restoran(Objects.requireNonNull(dataSnapshot1.child("id_restoran").getValue()).toString());
+                        mFoodList.setJenis_makanan(Objects.requireNonNull(dataSnapshot1.child("jenis_makanan").getValue()).toString());
+                        mFoodList.setNama_restoran(Objects.requireNonNull(dataSnapshot1.child("nama_restoran").getValue()).toString());
+                        mFoodList.setThumbnail_restoran(Objects.requireNonNull(dataSnapshot1.child("thumbnail_restoran").getValue()).toString());
+
+                        // Menambahkan semua data ke model
                         mArrayList.add(mFoodList);
                     }
 

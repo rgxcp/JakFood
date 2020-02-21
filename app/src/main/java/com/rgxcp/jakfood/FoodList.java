@@ -7,7 +7,7 @@ public class FoodList {
     private String alamat_singkat, id_restoran, jenis_makanan, nama_restoran, thumbnail_restoran;
 
     // Constructor kosong
-    public FoodList() {
+    FoodList() {
         // null
     }
 
@@ -22,27 +22,52 @@ public class FoodList {
     }
 
     // Getter
-    public Double getBintang() {
+    Double getBintang() {
         return bintang;
     }
 
-    public String getAlamat_singkat() {
+    String getAlamat_singkat() {
         return alamat_singkat;
     }
 
-    public String getId_restoran() {
+    String getId_restoran() {
         return id_restoran;
     }
 
-    public String getJenis_makanan() {
+    String getJenis_makanan() {
         return jenis_makanan;
     }
 
-    public String getNama_restoran() {
+    String getNama_restoran() {
         return nama_restoran;
     }
 
-    public String getThumbnail_restoran() {
+    String getThumbnail_restoran() {
         return thumbnail_restoran;
+    }
+
+    // Setter
+    void setBintang(Double bintang) {
+        this.bintang = bintang;
+    }
+
+    void setAlamat_singkat(String alamat_singkat) {
+        this.alamat_singkat = alamat_singkat;
+    }
+
+    void setId_restoran(String id_restoran) {
+        this.id_restoran = id_restoran;
+    }
+
+    void setJenis_makanan(String jenis_makanan) {
+        this.jenis_makanan = jenis_makanan;
+    }
+
+    void setNama_restoran(String nama_restoran) {
+        this.nama_restoran = nama_restoran;
+    }
+
+    void setThumbnail_restoran(String thumbnail_restoran) {
+        this.thumbnail_restoran = thumbnail_restoran;
     }
 }
