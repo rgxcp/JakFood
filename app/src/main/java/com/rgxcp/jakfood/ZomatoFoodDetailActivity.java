@@ -218,15 +218,26 @@ public class ZomatoFoodDetailActivity extends AppCompatActivity {
                     mThumbnail = response.getString("thumb");
 
                     String mStarReview = "Bintang " + mUserRatingObject.getString("aggregate_rating") + " dari " + response.getInt("all_reviews_count") + " ulasan";
-                    String mApproxPrice = "Rp " + (response.getInt("average_cost_for_two") / response.getInt("price_range")) + " per orang";
+                    String mApproxPrice = String.valueOf(response.getInt("average_cost_for_two") / response.getInt("price_range"));
                     String mRestaurantImage = mThumbnail.substring(0, mThumbnail.length() - 50);
                     RequestOptions mRequestOptions = new RequestOptions().centerCrop().placeholder(R.drawable.vc_placeholder).error(R.drawable.vc_placeholder);
+
+                    // Validasi harga
+                    if (mApproxPrice.length() == 5) {
+                        String mPrice = "Rp " + mApproxPrice.substring(0, 2) + "." + mApproxPrice.substring(2, 5) + " per orang";
+                        mTextApproxPrice.setText(mPrice);
+                    } else if (mApproxPrice.length() == 6) {
+                        String mPrice = "Rp " + mApproxPrice.substring(0, 3) + "." + mApproxPrice.substring(3, 6) + " per orang";
+                        mTextApproxPrice.setText(mPrice);
+                    } else {
+                        String mPrice = "Rp " + mApproxPrice + " per orang";
+                        mTextApproxPrice.setText(mPrice);
+                    }
 
                     mTextName.setText(mName);
                     mTextFullAddress.setText(mLocationObject.getString("address"));
                     mTextTiming.setText(response.getString("timings"));
                     mTextStarReview.setText(mStarReview);
-                    mTextApproxPrice.setText(mApproxPrice);
                     Glide.with(ZomatoFoodDetailActivity.this).load(mRestaurantImage).apply(mRequestOptions).into(mImageRestaurant);
 
                     // Mendapatkan nama JSON array
