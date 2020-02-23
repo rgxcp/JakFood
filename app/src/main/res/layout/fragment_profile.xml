@@ -28,13 +28,16 @@
                 android:src="@drawable/vc_profile" />
         </com.github.florent37.shapeofview.shapes.CircleView>
 
-        <ProgressBar
-            android:id="@+id/pbr_fp_loading"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/sfl_fp_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/sov_fp_profile"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="16dp" />
+            android:layout_marginTop="16dp">
+
+            <include layout="@layout/shimmer_profile" />
+        </com.facebook.shimmer.ShimmerFrameLayout>
 
         <TextView
             android:id="@+id/txt_fp_full_name"

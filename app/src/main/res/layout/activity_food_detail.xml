@@ -7,12 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".FoodDetailActivity">
 
-    <ProgressBar
-        android:id="@+id/pbr_afd_loading"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="168dp" />
-
     <Button
         android:id="@+id/btn_afd_lens"
         android:layout_width="40dp"
@@ -37,12 +31,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="wrap_content">
 
             <RelativeLayout
+                android:id="@+id/rlt_afd_anchor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -63,125 +57,141 @@
                 </com.github.florent37.shapeofview.shapes.RoundRectView>
             </RelativeLayout>
 
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/sfl_afd_loading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rlt_afd_anchor">
+
+                <include layout="@layout/shimmer_food_detail" />
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="24dp"
+                android:layout_below="@id/rlt_afd_anchor"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:weightSum="2">
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/txt_afd_restaurant_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:fontFamily="@font/montserrat_semi_bold"
+                            android:textColor="@color/blackPrimary"
+                            android:textSize="20sp" />
+
+                        <ImageView
+                            android:id="@+id/img_afd_favorite"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_weight="0"
+                            android:contentDescription="@string/content_description"
+                            android:src="@drawable/ic_favorite_gray" />
+                    </LinearLayout>
 
                     <TextView
-                        android:id="@+id/txt_afd_restaurant_name"
+                        android:id="@+id/txt_afd_full_address"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:fontFamily="@font/montserrat_semi_bold"
+                        android:layout_marginEnd="32dp"
+                        android:fontFamily="@font/montserrat_light"
+                        android:lineSpacingExtra="4dp"
                         android:textColor="@color/blackPrimary"
-                        android:textSize="20sp" />
-
-                    <ImageView
-                        android:id="@+id/img_afd_favorite"
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
-                        android:layout_weight="0"
-                        android:contentDescription="@string/content_description"
-                        android:src="@drawable/ic_favorite_gray" />
+                        android:textSize="14sp" />
                 </LinearLayout>
 
-                <TextView
-                    android:id="@+id/txt_afd_full_address"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="32dp"
-                    android:fontFamily="@font/montserrat_light"
-                    android:lineSpacingExtra="4dp"
-                    android:textColor="@color/blackPrimary"
-                    android:textSize="14sp" />
-            </LinearLayout>
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="24dp"
-                android:orientation="vertical">
+                    <TextView
+                        style="@style/TextDetailHeading"
+                        android:text="@string/detail" />
 
-                <TextView
-                    style="@style/TextDetailHeading"
-                    android:text="@string/detail" />
+                    <TextView
+                        android:id="@+id/txt_afd_open_day"
+                        style="@style/TextDetailDescription"
+                        android:layout_marginTop="8dp" />
 
-                <TextView
-                    android:id="@+id/txt_afd_open_day"
-                    style="@style/TextDetailDescription"
-                    android:layout_marginTop="8dp" />
+                    <TextView
+                        android:id="@+id/txt_afd_open_hour"
+                        style="@style/TextDetailDescription"
+                        android:layout_marginTop="6dp" />
 
-                <TextView
-                    android:id="@+id/txt_afd_open_hour"
-                    style="@style/TextDetailDescription"
-                    android:layout_marginTop="6dp" />
+                    <TextView
+                        android:id="@+id/txt_afd_star_review"
+                        style="@style/TextDetailDescription"
+                        android:layout_marginTop="6dp" />
+                </LinearLayout>
 
-                <TextView
-                    android:id="@+id/txt_afd_star_review"
-                    style="@style/TextDetailDescription"
-                    android:layout_marginTop="6dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="24dp"
-                android:orientation="vertical">
-
-                <TextView
-                    style="@style/TextDetailHeading"
-                    android:text="@string/price" />
-
-                <TextView
-                    android:id="@+id/txt_afd_approx_price"
-                    style="@style/TextDetailDescription"
-                    android:layout_marginTop="8dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:clipToPadding="false"
-                android:orientation="vertical"
-                android:paddingStart="24dp"
-                android:paddingEnd="24dp"
-                android:paddingBottom="24dp">
-
-                <TextView
-                    style="@style/TextDetailHeading"
-                    android:text="@string/menu" />
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="3dp">
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:orientation="vertical">
 
-                    <ImageView
-                        android:id="@+id/img_afd_menu"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:contentDescription="@string/content_description"
-                        android:src="@drawable/vc_placeholder" />
-                </androidx.cardview.widget.CardView>
+                    <TextView
+                        style="@style/TextDetailHeading"
+                        android:text="@string/price" />
+
+                    <TextView
+                        android:id="@+id/txt_afd_approx_price"
+                        style="@style/TextDetailDescription"
+                        android:layout_marginTop="8dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:clipToPadding="false"
+                    android:orientation="vertical"
+                    android:paddingStart="24dp"
+                    android:paddingEnd="24dp"
+                    android:paddingBottom="24dp">
+
+                    <TextView
+                        style="@style/TextDetailHeading"
+                        android:text="@string/menu" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="3dp">
+
+                        <ImageView
+                            android:id="@+id/img_afd_menu"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:contentDescription="@string/content_description"
+                            android:src="@drawable/vc_placeholder" />
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
+        </RelativeLayout>
     </ScrollView>
 
     <androidx.cardview.widget.CardView

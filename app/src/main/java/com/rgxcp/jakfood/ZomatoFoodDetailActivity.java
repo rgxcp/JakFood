@@ -13,7 +13,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +24,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -51,6 +51,7 @@ public class ZomatoFoodDetailActivity extends AppCompatActivity {
     private ConstraintLayout mConstraintLayout;
     private Double mLat, mLng;
     private ImageView mImageFavorite, mImageRestaurant;
+    private ShimmerFrameLayout mShimmer;
     private String mName, mRestaurantId, mShortAddress, mThumbnail;
     private TextView mTextName, mTextFullAddress, mTextTiming, mTextStarReview, mTextApproxPrice;
     private DatabaseReference mFirebase;
@@ -78,6 +79,7 @@ public class ZomatoFoodDetailActivity extends AppCompatActivity {
         mConstraintLayout = findViewById(R.id.cnt_azfd_layout);
         mImageFavorite = findViewById(R.id.img_azfd_favorite);
         mImageRestaurant = findViewById(R.id.img_azfd_restaurant_image);
+        mShimmer = findViewById(R.id.sfl_azfd_loading);
         mTextName = findViewById(R.id.txt_azfd_restaurant_name);
         mTextFullAddress = findViewById(R.id.txt_azfd_full_address);
         mTextTiming = findViewById(R.id.txt_azfd_open_day_hour);
@@ -87,7 +89,9 @@ public class ZomatoFoodDetailActivity extends AppCompatActivity {
         // Deklarasi dan assign variable lokal
         Button mButtonBack = findViewById(R.id.btn_azfd_back);
         Button mButtonMaps = findViewById(R.id.btn_azfd_maps);
-        ProgressBar mProgressBar = findViewById(R.id.pbr_azfd_loading);
+
+        // Shimmer
+        mShimmer.startShimmer();
 
         // Recycler view
         mListPhoto = new ArrayList<>();
@@ -130,9 +134,6 @@ public class ZomatoFoodDetailActivity extends AppCompatActivity {
         // Parsing JSON
         parseJSON(mRestaurantId);
         parseJSONReview(mRestaurantId);
-
-        // Progress bar
-        mProgressBar.setVisibility(View.INVISIBLE);
 
         // Activities
         mButtonBack.setOnClickListener(new View.OnClickListener() {
@@ -263,6 +264,10 @@ public class ZomatoFoodDetailActivity extends AppCompatActivity {
                     // Setup adapter
                     mZomatoPhotoAdapter = new ZomatoPhotoAdapter(ZomatoFoodDetailActivity.this, mListPhoto);
                     mRecyclerViewPhoto.setAdapter(mZomatoPhotoAdapter);
+
+                    // Shimmer
+                    mShimmer.stopShimmer();
+                    mShimmer.setVisibility(View.GONE);
                 }
             }
         }, new Response.ErrorListener() {
@@ -321,6 +326,10 @@ public class ZomatoFoodDetailActivity extends AppCompatActivity {
                     // Setup adapter
                     mZomatoReviewAdapter = new ZomatoReviewAdapter(ZomatoFoodDetailActivity.this, mListReview);
                     mRecyclerViewReview.setAdapter(mZomatoReviewAdapter);
+
+                    // Shimmer
+                    mShimmer.stopShimmer();
+                    mShimmer.setVisibility(View.GONE);
                 }
             }
         }, new Response.ErrorListener() {

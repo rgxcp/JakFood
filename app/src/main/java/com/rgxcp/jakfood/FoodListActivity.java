@@ -8,11 +8,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ProgressBar;
 import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -24,6 +24,9 @@ import java.util.Objects;
 
 public class FoodListActivity extends AppCompatActivity {
 
+    // Deklarasi variable global
+    private ShimmerFrameLayout mShimmer;
+
     // Setup recycler view
     private ArrayList<FoodList> mArrayList;
     private FoodListAdapter mFoodListAdapter;
@@ -34,11 +37,17 @@ public class FoodListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_list);
 
+        // Assign variable global
+        mShimmer = findViewById(R.id.sfl_afl_loading);
+
         // Deklarasi dan assign variable lokal
         Button mButtonBack = findViewById(R.id.btn_afl_back);
         SearchView mSearchView = findViewById(R.id.srv_afl_food);
         TextView mTextFoodName = findViewById(R.id.txt_afl_food_name);
         DatabaseReference mFirebase;
+
+        // Shimmer
+        mShimmer.startShimmer();
 
         // Recycler view
         mArrayList = new ArrayList<>();
@@ -84,9 +93,9 @@ public class FoodListActivity extends AppCompatActivity {
                     mFoodListAdapter = new FoodListAdapter(FoodListActivity.this, mArrayList);
                     mRecyclerView.setAdapter(mFoodListAdapter);
 
-                    // Progress bar
-                    ProgressBar mProgressBar = findViewById(R.id.pbr_afl_loading);
-                    mProgressBar.setVisibility(View.INVISIBLE);
+                    // Shimmer
+                    mShimmer.stopShimmer();
+                    mShimmer.setVisibility(View.GONE);
                 }
 
                 @Override

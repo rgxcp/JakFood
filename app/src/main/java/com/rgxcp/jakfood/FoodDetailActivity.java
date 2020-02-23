@@ -12,12 +12,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -37,8 +37,8 @@ public class FoodDetailActivity extends AppCompatActivity {
     private ConstraintLayout mConstraintLayout;
     private Double mLat, mLng;
     private ImageView mImageRestaurant, mImageFavorite, mImageMenu;
-    private ProgressBar mProgressBar;
     private RequestOptions mRequestOptions;
+    private ShimmerFrameLayout mShimmer;
     private String mIdRestoranPopuler, mIdRestoranSemuaMakanan, mJenisMakananPopuler, mJenisMakananSemuaMakanan, mMenu, mRestaurantImage, mRestaurantName, mRestaurantThumbnail, mShortAddress;
     private TextView mTextRestaurantName, mTextFullAddress, mTextOpenDay, mTextOpenHour, mTextStarReview, mTextApproxPrice;
     private DatabaseReference mFirebaseAllFood, mFirebasePopuler;
@@ -60,7 +60,7 @@ public class FoodDetailActivity extends AppCompatActivity {
         mImageRestaurant = findViewById(R.id.img_afd_restaurant_image);
         mImageFavorite = findViewById(R.id.img_afd_favorite);
         mImageMenu = findViewById(R.id.img_afd_menu);
-        mProgressBar = findViewById(R.id.pbr_afd_loading);
+        mShimmer = findViewById(R.id.sfl_afd_loading);
         mTextRestaurantName = findViewById(R.id.txt_afd_restaurant_name);
         mTextFullAddress = findViewById(R.id.txt_afd_full_address);
         mTextOpenDay = findViewById(R.id.txt_afd_open_day);
@@ -72,6 +72,9 @@ public class FoodDetailActivity extends AppCompatActivity {
         // Deklarasi dan assign variable lokal
         Button mButtonBack = findViewById(R.id.btn_afd_back);
         DatabaseReference mFirebaseFavorite;
+
+        // Shimmer
+        mShimmer.startShimmer();
 
         // Menangkap data dari Intent
         Bundle mBundle = getIntent().getExtras();
@@ -161,7 +164,9 @@ public class FoodDetailActivity extends AppCompatActivity {
                                 Glide.with(FoodDetailActivity.this).load(mRestaurantImage).apply(mRequestOptions).into(mImageRestaurant);
                                 Glide.with(FoodDetailActivity.this).load(mMenu).apply(mRequestOptions).into(mImageMenu);
 
-                                mProgressBar.setVisibility(View.INVISIBLE);
+                                // Shimmer
+                                mShimmer.stopShimmer();
+                                mShimmer.setVisibility(View.GONE);
 
                                 // Activities
                                 mImageFavorite.setOnClickListener(new View.OnClickListener() {
@@ -282,7 +287,9 @@ public class FoodDetailActivity extends AppCompatActivity {
                         Glide.with(FoodDetailActivity.this).load(mRestaurantImage).apply(mRequestOptions).into(mImageRestaurant);
                         Glide.with(FoodDetailActivity.this).load(mMenu).apply(mRequestOptions).into(mImageMenu);
 
-                        mProgressBar.setVisibility(View.INVISIBLE);
+                        // Shimmer
+                        mShimmer.stopShimmer();
+                        mShimmer.setVisibility(View.GONE);
 
                         // Activities
                         mImageFavorite.setOnClickListener(new View.OnClickListener() {

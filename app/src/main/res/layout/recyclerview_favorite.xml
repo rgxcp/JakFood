@@ -10,7 +10,7 @@
     android:paddingStart="24dp"
     android:paddingEnd="24dp"
     android:paddingBottom="5dp"
-    tools:context=".FoodListActivity">
+    tools:context=".MainActivity">
 
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"

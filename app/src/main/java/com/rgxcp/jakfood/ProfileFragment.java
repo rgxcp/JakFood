@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +16,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -28,7 +28,7 @@ import java.util.Objects;
 public class ProfileFragment extends Fragment {
 
     // Deklarasi variable global
-    private ProgressBar mProgressBar;
+    private ShimmerFrameLayout mShimmer;
     private TextView mTextFullName, mTextEmail, mTextTotalFavorite;
     private DatabaseReference mFirebase;
 
@@ -47,7 +47,7 @@ public class ProfileFragment extends Fragment {
         getUsername();
 
         // Assign variable global
-        mProgressBar = mView.findViewById(R.id.pbr_fp_loading);
+        mShimmer = mView.findViewById(R.id.sfl_fp_loading);
         mTextFullName = mView.findViewById(R.id.txt_fp_full_name);
         mTextEmail = mView.findViewById(R.id.txt_fp_email);
         mTextTotalFavorite = mView.findViewById(R.id.txt_fp_total_favorite);
@@ -58,6 +58,9 @@ public class ProfileFragment extends Fragment {
         TextView mTextHelp = mView.findViewById(R.id.txt_fp_help);
         TextView mTextAbout = mView.findViewById(R.id.txt_fp_about);
         TextView mButtonSignOut = mView.findViewById(R.id.txt_fp_sign_out);
+
+        // Shimmer
+        mShimmer.startShimmer();
 
         // Mengecek apakah ada user aktif
         if (mUsername.isEmpty()) {
@@ -73,7 +76,10 @@ public class ProfileFragment extends Fragment {
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     mTextFullName.setText(Objects.requireNonNull(dataSnapshot.child("full_name").getValue()).toString());
                     mTextEmail.setText(Objects.requireNonNull(dataSnapshot.child("email").getValue()).toString());
-                    mProgressBar.setVisibility(View.INVISIBLE);
+
+                    // Shimmer
+                    mShimmer.stopShimmer();
+                    mShimmer.setVisibility(View.GONE);
 
                     mFirebase = FirebaseDatabase.getInstance().getReference().child("user_favorite").child(mUsername);
                     mFirebase.addListenerForSingleValueEvent(new ValueEventListener() {

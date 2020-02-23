@@ -17,6 +17,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.facebook.shimmer.ShimmerFrameLayout;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -31,7 +32,7 @@ import java.util.Objects;
 public class ZomatoFoodListActivity extends AppCompatActivity {
 
     // Deklarasi variable global
-    private ProgressBar mProgressBar;
+    private ShimmerFrameLayout mShimmer;
 
     // Setup recycler view
     private List<ZomatoFoodList> mList;
@@ -44,12 +45,15 @@ public class ZomatoFoodListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_zomato_food_list);
 
         // Assign variable global
-        mProgressBar = findViewById(R.id.pbr_azfl_loading);
+        mShimmer = findViewById(R.id.sfl_azfl_loading);
 
         // Deklarasi dan assign variable lokal
         Button mButtonBack = findViewById(R.id.btn_azfl_back);
         SearchView mSearchView = findViewById(R.id.srv_azfl_food);
         TextView mTextCategory = findViewById(R.id.txt_azfl_category);
+
+        // Shimmer
+        mShimmer.startShimmer();
 
         // Recycler view
         mList = new ArrayList<>();
@@ -128,8 +132,9 @@ public class ZomatoFoodListActivity extends AppCompatActivity {
                     mZomatoFoodListAdapter = new ZomatoFoodListAdapter(ZomatoFoodListActivity.this, mList);
                     mRecyclerView.setAdapter(mZomatoFoodListAdapter);
 
-                    // Progress bar
-                    mProgressBar.setVisibility(View.INVISIBLE);
+                    // Shimmer
+                    mShimmer.stopShimmer();
+                    mShimmer.setVisibility(View.GONE);
                 }
             }
         }, new Response.ErrorListener() {

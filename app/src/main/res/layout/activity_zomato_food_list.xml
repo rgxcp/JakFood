@@ -31,13 +31,15 @@
         android:layout_below="@id/lnr_azfl_layout"
         android:theme="@style/SearchGeneralTheme" />
 
-    <ProgressBar
-        android:id="@+id/pbr_azfl_loading"
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/sfl_azfl_loading"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/srv_azfl_food"
-        android:layout_marginTop="32dp"
-        android:padding="168dp" />
+        android:layout_marginTop="32dp">
+
+        <include layout="@layout/shimmer_food_list" />
+    </com.facebook.shimmer.ShimmerFrameLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcv_azfl_food_list"

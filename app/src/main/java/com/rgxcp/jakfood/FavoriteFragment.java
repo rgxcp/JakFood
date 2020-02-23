@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ProgressBar;
 import android.widget.SearchView;
 import android.widget.Toast;
 
@@ -17,6 +16,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -29,7 +29,7 @@ import java.util.Objects;
 public class FavoriteFragment extends Fragment {
 
     // Deklarasi variable global
-    private ProgressBar mProgressBar;
+    private ShimmerFrameLayout mShimmer;
 
     // Setup recycler view
     private ArrayList<FoodList> mArrayList;
@@ -49,11 +49,14 @@ public class FavoriteFragment extends Fragment {
         getUsername();
 
         // Assign variable global
-        mProgressBar = mView.findViewById(R.id.pbr_ff_loading);
+        mShimmer = mView.findViewById(R.id.sfl_ff_loading);
 
         // Deklarasi dan assign variable lokal
         SearchView mSearchView = mView.findViewById(R.id.srv_ff_favorite);
         DatabaseReference mFirebase;
+
+        // Shimmer
+        mShimmer.startShimmer();
 
         // Recycler view
         mArrayList = new ArrayList<>();
@@ -98,8 +101,9 @@ public class FavoriteFragment extends Fragment {
                     mFavoriteAdapter = new FavoriteAdapter(getActivity(), mArrayList);
                     mRecyclerView.setAdapter(mFavoriteAdapter);
 
-                    // Progress bar
-                    mProgressBar.setVisibility(View.INVISIBLE);
+                    // Shimmer
+                    mShimmer.stopShimmer();
+                    mShimmer.setVisibility(View.GONE);
                 }
 
                 @Override
