@@ -41,7 +41,7 @@ public class FoodDetailActivity extends AppCompatActivity {
     private ShimmerFrameLayout mShimmer;
     private String mIdRestoranPopuler, mIdRestoranSemuaMakanan, mJenisMakananPopuler, mJenisMakananSemuaMakanan, mMenu, mRestaurantImage, mRestaurantName, mRestaurantThumbnail, mShortAddress;
     private TextView mTextRestaurantName, mTextFullAddress, mTextOpenDay, mTextOpenHour, mTextStarReview, mTextApproxPrice;
-    private DatabaseReference mFirebaseAllFood, mFirebasePopuler;
+    private DatabaseReference mFirebaseAllFood, mFirebaseFavorite, mFirebasePopuler;
 
     // Validasi user
     private String mUsername;
@@ -71,7 +71,6 @@ public class FoodDetailActivity extends AppCompatActivity {
 
         // Deklarasi dan assign variable lokal
         Button mButtonBack = findViewById(R.id.btn_afd_back);
-        DatabaseReference mFirebaseFavorite;
 
         // Shimmer
         mShimmer.startShimmer();
@@ -88,15 +87,28 @@ public class FoodDetailActivity extends AppCompatActivity {
                 mImageFavorite.setImageResource(R.drawable.ic_favorite_gray);
             } else {
                 if (mIdPopuler != null) {
-                    mFirebaseFavorite = FirebaseDatabase.getInstance().getReference().child("user_favorite").child(mUsername).child(mIdPopuler);
+                    mFirebaseFavorite = FirebaseDatabase.getInstance().getReference().child("populer").child(mIdPopuler);
                     mFirebaseFavorite.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                            if (dataSnapshot.exists()) {
-                                mImageFavorite.setImageResource(R.drawable.ic_favorite_red);
-                            } else {
-                                mImageFavorite.setImageResource(R.drawable.ic_favorite_gray);
-                            }
+                            mIdRestoranPopuler = Objects.requireNonNull(dataSnapshot.child("id_restoran").getValue()).toString();
+                            
+                            mFirebaseFavorite = FirebaseDatabase.getInstance().getReference().child("user_favorite").child(mUsername).child(mIdRestoranPopuler);
+                            mFirebaseFavorite.addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    if (dataSnapshot.exists()) {
+                                        mImageFavorite.setImageResource(R.drawable.ic_favorite_red);
+                                    } else {
+                                        mImageFavorite.setImageResource(R.drawable.ic_favorite_gray);
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+                                    Toast.makeText(getApplicationContext(), "Ada kesalahan dalam database.", Toast.LENGTH_SHORT).show();
+                                }
+                            });
                         }
 
                         @Override
