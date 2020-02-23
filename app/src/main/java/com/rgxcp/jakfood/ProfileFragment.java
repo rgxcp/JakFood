@@ -117,7 +117,7 @@ public class ProfileFragment extends Fragment {
                 EditProfileFragment mEditProfileFragment = new EditProfileFragment();
                 FragmentManager mFragmentManager = getFragmentManager();
                 if (mFragmentManager != null) {
-                    mFragmentManager.beginTransaction().replace(R.id.fragment_container, mEditProfileFragment).addToBackStack(null).commit();
+                    mFragmentManager.beginTransaction().replace(R.id.fragment_container, mEditProfileFragment, "PROFILE").addToBackStack(null).commit();
                 }
             }
         });
@@ -136,7 +136,7 @@ public class ProfileFragment extends Fragment {
                 AboutFragment mAboutFragment = new AboutFragment();
                 FragmentManager mFragmentManager = getFragmentManager();
                 if (mFragmentManager != null) {
-                    mFragmentManager.beginTransaction().replace(R.id.fragment_container, mAboutFragment).addToBackStack(null).commit();
+                    mFragmentManager.beginTransaction().replace(R.id.fragment_container, mAboutFragment, "PROFILE").addToBackStack(null).commit();
                 }
             }
         });
