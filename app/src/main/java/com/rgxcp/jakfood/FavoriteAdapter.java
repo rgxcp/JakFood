@@ -13,6 +13,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -106,6 +108,14 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.ListVi
                         Toast.makeText(mContext, "Ada kesalahan dalam database.", Toast.LENGTH_SHORT).show();
                     }
                 });
+
+                // Refresh fragment
+                Fragment mCurrentFragment = ((MainActivity) mContext).getSupportFragmentManager().findFragmentById(R.id.fragment_container);
+                FragmentManager mFragmentManager = ((MainActivity) mContext).getSupportFragmentManager();
+
+                if (mCurrentFragment instanceof FavoriteFragment) {
+                    mFragmentManager.beginTransaction().detach(mCurrentFragment).attach(mCurrentFragment).commit();
+                }
             }
         });
     }
