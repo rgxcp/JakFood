@@ -36,14 +36,14 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.ListVi
 
     // Setup constructor
     private Context mContext;
-    private ArrayList<FoodList> mArrayList;
-    private List<FoodList> mList;
+    private ArrayList<FavoriteList> mArrayList;
+    private List<FavoriteList> mList;
 
     // Validasi user
     private String mUsername;
 
     // Constructor
-    FavoriteAdapter(Context mContext, ArrayList<FoodList> mArrayList) {
+    FavoriteAdapter(Context mContext, ArrayList<FavoriteList> mArrayList) {
         this.mContext = mContext;
         this.mArrayList = mArrayList;
         mList = new ArrayList<>(mArrayList);
@@ -135,22 +135,22 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.ListVi
         @Override
         protected FilterResults performFiltering(CharSequence charSequence) {
             // Setup list
-            List<FoodList> mListFiltered = new ArrayList<>();
+            List<FavoriteList> mListFiltered = new ArrayList<>();
 
             // Cari list
             if (charSequence == null || charSequence.length() == 0) {
                 mListFiltered.addAll(mList);
             } else {
                 String mQuery = charSequence.toString().toLowerCase().trim();
-                for (FoodList mFoodList : mList) {
+                for (FavoriteList mFavoriteList : mList) {
                     // Berdasarkan nama restoran
-                    if (mFoodList.getNama_restoran().toLowerCase().contains(mQuery)) {
-                        mListFiltered.add(mFoodList);
+                    if (mFavoriteList.getNama_restoran().toLowerCase().contains(mQuery)) {
+                        mListFiltered.add(mFavoriteList);
                     }
 
                     // Berdasarkan alamat restoran
-                    if (mFoodList.getAlamat_singkat().toLowerCase().contains(mQuery)) {
-                        mListFiltered.add(mFoodList);
+                    if (mFavoriteList.getAlamat_singkat().toLowerCase().contains(mQuery)) {
+                        mListFiltered.add(mFavoriteList);
                     }
                 }
             }

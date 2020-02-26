@@ -24,6 +24,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Objects;
 
 public class FavoriteFragment extends Fragment {
@@ -32,7 +34,7 @@ public class FavoriteFragment extends Fragment {
     private ShimmerFrameLayout mShimmer;
 
     // Setup recycler view
-    private ArrayList<FoodList> mArrayList;
+    private ArrayList<FavoriteList> mArrayList;
     private FavoriteAdapter mFavoriteAdapter;
     private RecyclerView mRecyclerView;
 
@@ -86,16 +88,25 @@ public class FavoriteFragment extends Fragment {
                         // FoodList mFavoriteList = dataSnapshot1.getValue(FoodList.class);
 
                         // Mengirim data ke Setter
-                        FoodList mFavoriteList = new FoodList();
+                        FavoriteList mFavoriteList = new FavoriteList();
                         mFavoriteList.setAlamat_singkat(Objects.requireNonNull(dataSnapshot1.child("alamat_singkat").getValue()).toString());
                         mFavoriteList.setId_restoran(Objects.requireNonNull(dataSnapshot1.child("id_restoran").getValue()).toString());
                         mFavoriteList.setJenis_makanan(Objects.requireNonNull(dataSnapshot1.child("jenis_makanan").getValue()).toString());
                         mFavoriteList.setNama_restoran(Objects.requireNonNull(dataSnapshot1.child("nama_restoran").getValue()).toString());
                         mFavoriteList.setThumbnail_restoran(Objects.requireNonNull(dataSnapshot1.child("thumbnail_restoran").getValue()).toString());
+                        mFavoriteList.setWaktu_akses(Objects.requireNonNull(dataSnapshot1.child("waktu_akses").getValue()).toString());
 
                         // Menambahkan semua data ke model
                         mArrayList.add(mFavoriteList);
                     }
+
+                    // Sort item
+                    Collections.sort(mArrayList, new Comparator<FavoriteList>() {
+                        @Override
+                        public int compare(FavoriteList favoriteList, FavoriteList t1) {
+                            return t1.getWaktu_akses().compareTo(favoriteList.getWaktu_akses());
+                        }
+                    });
 
                     // Setup adapter
                     mFavoriteAdapter = new FavoriteAdapter(getActivity(), mArrayList);
