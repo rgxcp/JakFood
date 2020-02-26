@@ -12,13 +12,13 @@ public class FoodList {
     }
 
     // Constructor dengan parameter
-    public FoodList(Double mBintang, String mAlamat_singkat, String mId_restoran, String mJenis_makanan, String mNama_restoran, String mThumbnail_restoran) {
-        bintang = mBintang;
-        alamat_singkat = mAlamat_singkat;
-        id_restoran = mId_restoran;
-        jenis_makanan = mJenis_makanan;
-        nama_restoran = mNama_restoran;
-        thumbnail_restoran = mThumbnail_restoran;
+    public FoodList(Double bintang, String alamat_singkat, String id_restoran, String jenis_makanan, String nama_restoran, String thumbnail_restoran) {
+        this.bintang = bintang;
+        this.alamat_singkat = alamat_singkat;
+        this.id_restoran = id_restoran;
+        this.jenis_makanan = jenis_makanan;
+        this.nama_restoran = nama_restoran;
+        this.thumbnail_restoran = thumbnail_restoran;
     }
 
     // Getter
