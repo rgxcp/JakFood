@@ -67,7 +67,7 @@ public class ZomatoPhotoAdapter extends RecyclerView.Adapter<ZomatoPhotoAdapter.
     }
 
     // Class
-    class ListViewHolder extends RecyclerView.ViewHolder {
+    static class ListViewHolder extends RecyclerView.ViewHolder {
 
         // Deklarasi variable global
         ImageView mImagePhoto;

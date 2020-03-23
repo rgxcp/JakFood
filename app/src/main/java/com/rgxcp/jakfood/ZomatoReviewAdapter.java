@@ -57,7 +57,7 @@ public class ZomatoReviewAdapter extends RecyclerView.Adapter<ZomatoReviewAdapte
     }
 
     // Class
-    class ListViewHolder extends RecyclerView.ViewHolder {
+    static class ListViewHolder extends RecyclerView.ViewHolder {
 
         // Deklarasi variable global
         ImageView mImageProfile;

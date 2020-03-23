@@ -173,7 +173,7 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.ListVi
     };
 
     // Class
-    class ListViewHolder extends RecyclerView.ViewHolder {
+    static class ListViewHolder extends RecyclerView.ViewHolder {
 
         // Deklarasi variable global
         ImageView mImageRestaurantThumbnail;

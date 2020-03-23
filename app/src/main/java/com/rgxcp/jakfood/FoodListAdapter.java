@@ -147,7 +147,7 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.ListVi
     };
 
     // Class
-    class ListViewHolder extends RecyclerView.ViewHolder {
+    static class ListViewHolder extends RecyclerView.ViewHolder {
 
         // Deklarasi variable global
         ImageView mImageRestaurantThumbnail, mImageStar;
