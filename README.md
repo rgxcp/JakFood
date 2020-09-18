@@ -3,6 +3,9 @@
 
 **ID**: Aplikasi pencarian makanan di Jakarta berbasis mobile menggunakan Java dengan fungsi CRUD.
 
+## Status
+END OF LIFE
+
 ## Requirements
 1. Android Studio
 2. Android Emulator or Android Device
