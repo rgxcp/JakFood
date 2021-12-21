@@ -1,4 +1,4 @@
-# Java - JakFood
+# 🥑 Java - JakFood
 **EN**: Mobile-based food search application in Jakarta using Java with CRUD functions.
 
 **ID**: Aplikasi pencarian makanan di Jakarta berbasis mobile menggunakan Java dengan fungsi CRUD.
